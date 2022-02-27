@@ -23,6 +23,12 @@ from django.conf import settings
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home_page'), # AvitaDent
+    #path('services/', ######, name='services'), # Услуги
+    #path('actions/', ######, name='actions'), # Акции
+    #path('gallery/', ######, name='gallery'), # Работы
+    #path('clinic-page/', ######, name='clinic-page'), # О клинике
+    #path('reviews/', ######, name='reviews'), # Отзывы
+    #path('contacts/', ######, name='contacts'), # Контакты
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
