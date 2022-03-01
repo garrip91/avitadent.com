@@ -29,6 +29,15 @@ urlpatterns = [
     #path('clinic-page/', ######, name='clinic-page'), # О клинике
     #path('reviews/', ######, name='reviews'), # Отзывы
     #path('contacts/', ######, name='contacts'), # Контакты
+    #path('orthodontics/', ######, name='orthodontics'), # Ортодонтия
+    #path('implantology/', ######, name='implantology'), # Имплантология
+    #path('functional-dentistry/', ######, name='functional-dentistry'), # Функциональная стоматология
+    #path('orthopedics/', ######, name='orthopedics'), # Ортопедия
+    #path('periodontology/', ######, name='periodontology'), # Парадонтология
+    #path('therapy/', ######, name='therapy'), # Терапия
+    #path('surgery/', ######, name='surgery'), # Хирургия
+    #path('certificates-and-licenses/', ######, name='certificates-and-licenses'), # Сертификаты и лицензии
+    #path('privacy-policy/', ######, name='privacy-policy'), # Политика конфиденциальности
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
