@@ -16,28 +16,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from AvitaDentApp.views import HomePageView
+from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView
 
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home_page'), # AvitaDent
-    #path('services/', ######, name='services'), # Услуги
-    #path('actions/', ######, name='actions'), # Акции
-    #path('gallery/', ######, name='gallery'), # Работы
-    #path('clinic-page/', ######, name='clinic-page'), # О клинике
-    #path('reviews/', ######, name='reviews'), # Отзывы
-    #path('contacts/', ######, name='contacts'), # Контакты
-    #path('orthodontics/', ######, name='orthodontics'), # Ортодонтия
-    #path('implantology/', ######, name='implantology'), # Имплантология
-    #path('functional-dentistry/', ######, name='functional-dentistry'), # Функциональная стоматология
-    #path('orthopedics/', ######, name='orthopedics'), # Ортопедия
-    #path('periodontology/', ######, name='periodontology'), # Парадонтология
-    #path('therapy/', ######, name='therapy'), # Терапия
-    #path('surgery/', ######, name='surgery'), # Хирургия
-    #path('certificates-and-licenses/', ######, name='certificates-and-licenses'), # Сертификаты и лицензии
-    #path('privacy-policy/', ######, name='privacy-policy'), # Политика конфиденциальности
+    path('services/', ServicesPageView.as_view(), name='services'), # Услуги
+    path('actions/', ActionsPageView.as_view(), name='actions'), # Акции
+    path('gallery/', GalleryPageView.as_view(), name='gallery'), # Работы
+    path('clinic-page/', ClinicPageView.as_view(), name='clinic-page'), # О клинике
+    path('reviews/', ReviewsPageView.as_view(), name='reviews'), # Отзывы
+    path('contacts/', ContactsPageView.as_view(), name='contacts'), # Контакты
+    path('orthodontics/', OrthodonticsPageView.as_view(), name='orthodontics'), # Ортодонтия
+    path('implantology/', ImplantologyPageView.as_view(), name='implantology'), # Имплантология
+    path('functional-dentistry/', FunctionalDentistryPageView.as_view(), name='functional-dentistry'), # Функциональная стоматология
+    path('orthopedics/', OrthopedicsPageView.as_view(), name='orthopedics'), # Ортопедия
+    path('periodontology/', PeriodontologyPageView.as_view(), name='periodontology'), # Парадонтология
+    path('therapy/', TherapyPageView.as_view(), name='therapy'), # Терапия
+    path('surgery/', SurgeryPageView.as_view(), name='surgery'), # Хирургия
+    path('certificates-and-licenses/', CertificatesAndLicensesPageView.as_view(), name='certificates-and-licenses'), # Сертификаты и лицензии
+    path('privacy-policy/', PrivacyPolicyPageView.as_view(), name='privacy-policy'), # Политика конфиденциальности
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
