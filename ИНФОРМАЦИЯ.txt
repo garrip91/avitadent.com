@@ -1,2 +1,20 @@
 1. СТИЛЕВЫЕ ФАЙЛЫ:
 1.1. В 12/style.min.css 6 совпадений с ключевым словом "fonts"
+
+2. КОЛ-ВО СТРОК КОДА В ТЕЛЕ КАЖДОГО ШАБЛОННОГО ТЕГА {% block main_class_page %} (ПО ПОРЯДКУ И КРОМЕ base.html):
+2.1.  home.html:                      50 - 1216 (1167)
+2.2.  services.html:                  28 - 1228 (1201)
+2.3.  actions.html:                   28 - 111 (84)
+2.4.  gallery.html:                   40 - 153 (114)
+2.5.  clinic-page.html:               40 - 228 (189)
+2.6.  reviews.html:                   28 - 1089 (1062)
+2.7.  contacts.html:                  24 - 109 (86)
+2.8.  orthodontics.html:              28 - 128 (101)
+2.9.  implantology.html:              28 - 164 (136)
+2.10. functional-dentistry.html:      28 - 140 (113)
+2.11. orthopedics.html:               28 - 200 (173)
+2.12. periodontology.html:            28 - 104 (77)
+2.13. therapy.html:                   28 - 176 (149)
+2.14. surgery.html:                   28 - 104 (77)
+2.15. certificates-and-licenses.html: 28 - 287 (260)
+2.16. privacy-policy.html:            28 - 148 (121)
