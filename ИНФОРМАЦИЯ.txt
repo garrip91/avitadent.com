@@ -10,7 +10,7 @@
 2.6.  reviews.html:                   28 - 1089 (1062) -V-
 2.7.  contacts.html:                  24 - 109 (86) 9
 2.8.  orthodontics.html:              28 - 128 (101) 8
-2.9.  implantology.html:              28 - 164 (136) 4
+2.9.  implantology.html:              28 - 164 (136) -V-
 2.10. functional-dentistry.html:      28 - 140 (113) 7
 2.11. orthopedics.html:               28 - 200 (173) -V-
 2.12. periodontology.html:            28 - 104 (77) 11
