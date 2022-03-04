@@ -6,7 +6,7 @@
 2.2.  services.html:                  28 - 1228 (1201) -V-
 2.3.  actions.html:                   28 - 111 (84) 10
 2.4.  gallery.html:                   40 - 153 (114) 6
-2.5.  clinic-page.html:               40 - 228 (189) 1
+2.5.  clinic-page.html:               40 - 228 (189) -V-
 2.6.  reviews.html:                   28 - 1089 (1062) -V-
 2.7.  contacts.html:                  24 - 109 (86) 9
 2.8.  orthodontics.html:              28 - 128 (101) 8
