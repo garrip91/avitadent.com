@@ -8,7 +8,7 @@
 2.4.  gallery.html:                   40 - 153 (114) -V-
 2.5.  clinic-page.html:               40 - 228 (189) -V-
 2.6.  reviews.html:                   28 - 1089 (1062) -V-
-2.7.  contacts.html:                  24 - 109 (86) 9
+2.7.  contacts.html:                  24 - 109 (86) -V-
 2.8.  orthodontics.html:              28 - 128 (101) -V-
 2.9.  implantology.html:              28 - 164 (136) -V-
 2.10. functional-dentistry.html:      28 - 140 (113) -V-
