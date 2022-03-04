@@ -14,7 +14,7 @@
 2.10. functional-dentistry.html:      28 - 140 (113) 7
 2.11. orthopedics.html:               28 - 200 (173) -V-
 2.12. periodontology.html:            28 - 104 (77) 11
-2.13. therapy.html:                   28 - 176 (149) 3
+2.13. therapy.html:                   28 - 176 (149) -V-
 2.14. surgery.html:                   28 - 104 (77) 12
 2.15. certificates-and-licenses.html: 28 - 287 (260) -V-
 2.16. privacy-policy.html:            28 - 148 (121) 5
