@@ -12,7 +12,7 @@
 2.8.  orthodontics.html:              28 - 128 (101) 8
 2.9.  implantology.html:              28 - 164 (136) 4
 2.10. functional-dentistry.html:      28 - 140 (113) 7
-2.11. orthopedics.html:               28 - 200 (173) 2
+2.11. orthopedics.html:               28 - 200 (173) -V-
 2.12. periodontology.html:            28 - 104 (77) 11
 2.13. therapy.html:                   28 - 176 (149) 3
 2.14. surgery.html:                   28 - 104 (77) 12
