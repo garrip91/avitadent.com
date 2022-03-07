@@ -16,6 +16,7 @@
     2.12. periodontology.html:            28 - 104 (77) -V-
     2.13. therapy.html:                   28 - 176 (149) -V-
     2.14. surgery.html:                   28 - 104 (77) -V-
+    -     (div_class_offer_people.html)
     2.15. certificates-and-licenses.html: 28 - 287 (260) -V-
     2.16. privacy-policy.html:            28 - 148 (121) -V-
 
@@ -34,4 +35,5 @@
 
 4. НАШИ ДОКТОРА:
     4.1. home.html
-    4.2. 
+    4.2. gallery.html
+    4.3. clinic-page.html
