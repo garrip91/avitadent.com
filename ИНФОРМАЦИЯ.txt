@@ -1,20 +1,33 @@
 1. СТИЛЕВЫЕ ФАЙЛЫ:
-1.1. В 12/style.min.css 6 совпадений с ключевым словом "fonts"
+    1.1. В 12/style.min.css 6 совпадений с ключевым словом "fonts"
 
 2. КОЛ-ВО СТРОК КОДА В ТЕЛЕ КАЖДОГО ШАБЛОННОГО ТЕГА {% block main_class_page %} (ПО ПОРЯДКУ И КРОМЕ base.html):
-2.1.  home.html:                      50 - 1216 (1167) -V-
-2.2.  services.html:                  28 - 1228 (1201) -V-
-2.3.  actions.html:                   28 - 111 (84) -V-
-2.4.  gallery.html:                   40 - 153 (114) -V-
-2.5.  clinic-page.html:               40 - 228 (189) -V-
-2.6.  reviews.html:                   28 - 1089 (1062) -V-
-2.7.  contacts.html:                  24 - 109 (86) -V-
-2.8.  orthodontics.html:              28 - 128 (101) -V-
-2.9.  implantology.html:              28 - 164 (136) -V-
-2.10. functional-dentistry.html:      28 - 140 (113) -V-
-2.11. orthopedics.html:               28 - 200 (173) -V-
-2.12. periodontology.html:            28 - 104 (77) -V-
-2.13. therapy.html:                   28 - 176 (149) -V-
-2.14. surgery.html:                   28 - 104 (77) -V-
-2.15. certificates-and-licenses.html: 28 - 287 (260) -V-
-2.16. privacy-policy.html:            28 - 148 (121) -V-
+    2.1.  home.html:                      50 - 1216 (1167) -V-
+    2.2.  services.html:                  28 - 1228 (1201) -V-
+    2.3.  actions.html:                   28 - 111 (84) -V-
+    2.4.  gallery.html:                   40 - 153 (114) -V-
+    2.5.  clinic-page.html:               40 - 228 (189) -V-
+    2.6.  reviews.html:                   28 - 1089 (1062) -V-
+    2.7.  contacts.html:                  24 - 109 (86) -V-
+    2.8.  orthodontics.html:              28 - 128 (101) -V-
+    2.9.  implantology.html:              28 - 164 (136) -V-
+    2.10. functional-dentistry.html:      28 - 140 (113) -V-
+    2.11. orthopedics.html:               28 - 200 (173) -V-
+    2.12. periodontology.html:            28 - 104 (77) -V-
+    2.13. therapy.html:                   28 - 176 (149) -V-
+    2.14. surgery.html:                   28 - 104 (77) -V-
+    2.15. certificates-and-licenses.html: 28 - 287 (260) -V-
+    2.16. privacy-policy.html:            28 - 148 (121) -V-
+
+3. offers__tabs-nav ЕСТЬ В: 
+    3.1. (по услугам):
+        3.1.1. services.html
+        3.1.2. orthodontics.html
+        3.1.3. implantology.html
+        3.1.4. functional-dentistry.html
+        3.1.5. orthopedics.html
+        3.1.6. periodontology.html
+        3.1.7. therapy.html
+        3.1.8. surgery.html
+    3.2. (по отзывам):
+        3.2.1. reviews.html
