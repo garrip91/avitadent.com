@@ -23,7 +23,7 @@ class Gallery(models.Model):
 class Services(models.Model):
     orthodontics = models.CharField(max_length=50)
     implantology = models.CharField(max_length=50)
-    functional_dentistry = models.CharField(max_length=50)
+    functional_dentistry = models.CharField(max_length=50, related_name = 'Services_functional_dentistry')
     orthopedics = models.CharField(max_length=50)
     therapy = models.CharField(max_length=50)
     periodontology = models.CharField(max_length=50)
@@ -54,7 +54,7 @@ class Implantology(models.Model):
         verbose_name_plural = "Имплантология"
 
 class Functional_Dentistry(models.Model):
-    functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, related_name = 'Functional_Dentistry_functional_dentistry')
     image = models.ImageField(upload_to='../static/images/functional_dentistry_images')
     title = models.CharField(max_length=50)
     about = models.CharField(max_length=1000)
