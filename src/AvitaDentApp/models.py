@@ -1,4 +1,5 @@
 from django.db import models
+
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -21,7 +22,7 @@ class Services(models.Model):
 # 2
 class Stocks(models.Model):
     Stocks_title = models.CharField(max_length=100)
-    Stocks_gallery = models.ImageField(upload_to='../static/images/stocks_gallery_images')
+    Stocks_gallery = models.ImageField(upload_to='images/stocks_gallery_images')
 
     class Meta:
         verbose_name = "Акции"
@@ -31,7 +32,7 @@ class Stocks(models.Model):
 # 3
 class Gallery(models.Model):
     Gallery_title = models.CharField(max_length=100)
-    Gallery_photo_gallery = models.ImageField(upload_to='../static/images/gallery_images')
+    Gallery_photo_gallery = models.ImageField(upload_to='images/gallery_images')
 
     class Meta:
         verbose_name = "Галерея работ"
@@ -139,7 +140,7 @@ class Reviews_Yell(models.Model):
 # 5
 class Orthodontics(models.Model):
     Orthodontics_orthodontics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Orthodontics_image = models.ImageField(upload_to='../static/images/orthodontics_images')
+    Orthodontics_image = models.ImageField(upload_to='images/orthodontics_images')
     Orthodontics_title = models.CharField(max_length=50)
     Orthodontics_about = models.CharField(max_length=1000)
 
@@ -151,7 +152,7 @@ class Orthodontics(models.Model):
 # 6
 class Implantology(models.Model):
     Implantology_implantology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Implantology_image = models.ImageField(upload_to='../static/images/implantology_images')
+    Implantology_image = models.ImageField(upload_to='images/implantology_images')
     Implantology_title = models.CharField(max_length=50)
     Implantology_about = models.CharField(max_length=1000)
 
@@ -163,7 +164,7 @@ class Implantology(models.Model):
 # 7
 class Functional_Dentistry(models.Model):
     Functional_Dentistry_functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Functional_Dentistry_image = models.ImageField(upload_to='../static/images/functional_dentistry_images')
+    Functional_Dentistry_image = models.ImageField(upload_to='images/functional_dentistry_images')
     Functional_Dentistry_title = models.CharField(max_length=50)
     Functional_Dentistry_about = models.CharField(max_length=1000)
 
@@ -175,7 +176,7 @@ class Functional_Dentistry(models.Model):
 # 8
 class Orthopedics(models.Model):
     Orthopedics_orthopedics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Orthopedics_image = models.ImageField(upload_to='../static/images/orthopedics_images')
+    Orthopedics_image = models.ImageField(upload_to='images/orthopedics_images')
     Orthopedics_title = models.CharField(max_length=50)
     Orthopedics_about = models.CharField(max_length=1000)
 
@@ -187,7 +188,7 @@ class Orthopedics(models.Model):
 # 9
 class Periodontology(models.Model):
     Periodontology_periodontology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Periodontology_image = models.ImageField(upload_to='../static/images/periodontology_images')
+    Periodontology_image = models.ImageField(upload_to='images/periodontology_images')
     Periodontology_title = models.CharField(max_length=50)
     Periodontology_about = models.CharField(max_length=1000)
 
@@ -199,7 +200,7 @@ class Periodontology(models.Model):
 # 10
 class Therapy(models.Model):
     Therapy_therapy = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Therapy_image = models.ImageField(upload_to='../static/images/therapy_images')
+    Therapy_image = models.ImageField(upload_to='images/therapy_images')
     Therapy_title = models.CharField(max_length=50)
     Therapy_about = models.CharField(max_length=1000)
 
@@ -211,7 +212,7 @@ class Therapy(models.Model):
 # 11
 class Surgery(models.Model):
     Surgery_surgery = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Surgery_image = models.ImageField(upload_to='../static/images/surgery_images')
+    Surgery_image = models.ImageField(upload_to='images/surgery_images')
     Surgery_title = models.CharField(max_length=50)
     Surgery_about = models.CharField(max_length=1000)
 
@@ -225,7 +226,7 @@ class Doctors(models.Model):
     Doctors_name = models.CharField(max_length=30)
     Doctors_surname = models.CharField(max_length=50)
     Doctors_middle_name = models.CharField(max_length=50)
-    Doctors_photo = models.ImageField(upload_to='../static/images/doctors_images')
+    Doctors_photo = models.ImageField(upload_to='images/doctors_images')
     Doctors_about = models.CharField(max_length=1000)
 
     class Meta:
@@ -235,7 +236,7 @@ class Doctors(models.Model):
 
 class Instagram_Links(models.Model):
     Instagram_Links_title = models.CharField(max_length=100)
-    Instagram_Links_images = models.ImageField(upload_to='../static/images/instagram_links_images')
+    Instagram_Links_images = models.ImageField(upload_to='images/instagram_links_images')
     Instagram_Links_link = models.URLField(max_length = 200)
 
     class Meta:
