@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'AvitaDentApp',
-    'phonenumbers',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
