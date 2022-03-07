@@ -1,5 +1,5 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
+# from phonenumber_field.modelfields import PhoneNumberField
 
 class Doctors(models.Model):
     name = models.CharField(max_length=30)
@@ -20,10 +20,11 @@ class Gallery(models.Model):
         verbose_name = "Галерея работ"
         verbose_name_plural = "Галерея работ"
 
+# 2
 class Services(models.Model):
     orthodontics = models.CharField(max_length=50)
     implantology = models.CharField(max_length=50)
-    functional_dentistry = models.CharField(max_length=50, related_name = 'Services_functional_dentistry')
+    functional_dentistry = models.CharField(max_length=50)
     orthopedics = models.CharField(max_length=50)
     therapy = models.CharField(max_length=50)
     periodontology = models.CharField(max_length=50)
@@ -54,7 +55,7 @@ class Implantology(models.Model):
         verbose_name_plural = "Имплантология"
 
 class Functional_Dentistry(models.Model):
-    functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, related_name = 'Functional_Dentistry_functional_dentistry')
+    functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
     image = models.ImageField(upload_to='../static/images/functional_dentistry_images')
     title = models.CharField(max_length=50)
     about = models.CharField(max_length=1000)
@@ -206,7 +207,7 @@ class Reviews_Yell(models.Model):
 
 class Feedback(models.Model):
     name = models.CharField(max_length=50)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    # phone = PhoneNumberField(null=False, blank=False, unique=True)
 
     class Meta:
         verbose_name = "Обратная связь"
@@ -214,7 +215,7 @@ class Feedback(models.Model):
 
 class Make_An_Appointment(models.Model):
     name = models.CharField(max_length=50)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    # phone = PhoneNumberField(null=False, blank=False, unique=True)
     mail = models.EmailField(max_length = 254)
 
     class Meta:
