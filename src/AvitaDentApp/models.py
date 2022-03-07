@@ -1,17 +1,17 @@
 from django.db import models
-# from phonenumber_field.modelfields import PhoneNumberField
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 
 # 1
 class Services(models.Model):
-    orthodontics = models.CharField(max_length=50)
-    implantology = models.CharField(max_length=50)
-    functional_dentistry = models.CharField(max_length=50)
-    orthopedics = models.CharField(max_length=50)
-    therapy = models.CharField(max_length=50)
-    periodontology = models.CharField(max_length=50)
-    surgery = models.CharField(max_length=50)
+    Services_orthodontics = models.CharField(max_length=50)
+    Services_implantology = models.CharField(max_length=50)
+    Services_functional_dentistry = models.CharField(max_length=50)
+    Services_orthopedics = models.CharField(max_length=50)
+    Services_therapy = models.CharField(max_length=50)
+    Services_periodontology = models.CharField(max_length=50)
+    Services_surgery = models.CharField(max_length=50)
 
     class Meta:
         verbose_name = "Услуги"
@@ -20,8 +20,8 @@ class Services(models.Model):
         
 # 2
 class Stocks(models.Model):
-    title = models.CharField(max_length=100)
-    stocks_gallery = models.ImageField(upload_to='../static/images/stocks_gallery_images')
+    Stocks_title = models.CharField(max_length=100)
+    Stocks_gallery = models.ImageField(upload_to='../static/images/stocks_gallery_images')
 
     class Meta:
         verbose_name = "Акции"
@@ -30,8 +30,8 @@ class Stocks(models.Model):
         
 # 3
 class Gallery(models.Model):
-    title = models.CharField(max_length=100)
-    photo_gallery = models.ImageField(upload_to='../static/images/gallery_images')
+    Gallery_title = models.CharField(max_length=100)
+    Gallery_photo_gallery = models.ImageField(upload_to='../static/images/gallery_images')
 
     class Meta:
         verbose_name = "Галерея работ"
@@ -40,12 +40,12 @@ class Gallery(models.Model):
         
 # 4
 class Reviews(models.Model):
-    yandex = models.CharField(max_length=50)
-    google = models.CharField(max_length=50)
-    zoon = models.CharField(max_length=50)
-    spr = models.CharField(max_length=50)
-    prodoctorov = models.CharField(max_length=50)
-    yell = models.CharField(max_length=50)
+    Reviews_yandex = models.CharField(max_length=50)
+    Reviews_google = models.CharField(max_length=50)
+    Reviews_zoon = models.CharField(max_length=50)
+    Reviews_spr = models.CharField(max_length=50)
+    Reviews_prodoctorov = models.CharField(max_length=50)
+    Reviews_yell = models.CharField(max_length=50)
 
     class Meta:
         verbose_name = "Отзывы"
@@ -54,12 +54,12 @@ class Reviews(models.Model):
 
 # 4.1
 class Reviews_Yandex(models.Model):
-    yandex = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    full_name = models.CharField(max_length=50)
-    review = models.CharField(max_length=1000)
-    date = models.DateField()
-    source = models.URLField(max_length = 200)
-    stars = models.IntegerField(default=0)
+    Reviews_Yandex_yandex = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    Reviews_Yandex_full_name = models.CharField(max_length=50)
+    Reviews_Yandex_review = models.CharField(max_length=1000)
+    Reviews_Yandex_date = models.DateField()
+    Reviews_Yandex_source = models.URLField(max_length = 200)
+    Reviews_Yandex_stars = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = "Отзывы Яндекс"
@@ -68,12 +68,12 @@ class Reviews_Yandex(models.Model):
 
 # 4.2
 class Reviews_Google(models.Model):
-    google = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    full_name = models.CharField(max_length=50)
-    review = models.CharField(max_length=1000)
-    date = models.DateField()
-    source = models.URLField(max_length = 200)
-    stars = models.IntegerField(default=0)
+    Reviews_Google_google = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    Reviews_Google_full_name = models.CharField(max_length=50)
+    Reviews_Google_review = models.CharField(max_length=1000)
+    Reviews_Google_date = models.DateField()
+    Reviews_Google_source = models.URLField(max_length = 200)
+    Reviews_Google_stars = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = "Отзывы Гугл"
@@ -82,12 +82,12 @@ class Reviews_Google(models.Model):
 
 # 4.3
 class Reviews_Zoon(models.Model):
-    zoon = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    full_name = models.CharField(max_length=50)
-    review = models.CharField(max_length=1000)
-    date = models.DateField()
-    source = models.URLField(max_length = 200)
-    stars = models.IntegerField(default=0)
+    Reviews_Zoon_zoon = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    Reviews_Zoon_full_name = models.CharField(max_length=50)
+    Reviews_Zoon_review = models.CharField(max_length=1000)
+    Reviews_Zoon_date = models.DateField()
+    Reviews_Zoon_source = models.URLField(max_length = 200)
+    Reviews_Zoon_stars = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = "Отзывы Зун"
@@ -96,12 +96,12 @@ class Reviews_Zoon(models.Model):
 
 # 4.4
 class Reviews_Spr(models.Model):
-    spr = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    full_name = models.CharField(max_length=50)
-    review = models.CharField(max_length=1000)
-    date = models.DateField()
-    source = models.URLField(max_length = 200)
-    stars = models.IntegerField(default=0)
+    Reviews_Spr_spr = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    Reviews_Spr_full_name = models.CharField(max_length=50)
+    Reviews_Spr_review = models.CharField(max_length=1000)
+    Reviews_Spr_date = models.DateField()
+    Reviews_Spr_source = models.URLField(max_length = 200)
+    Reviews_Spr_stars = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = "Отзывы СПР"
@@ -110,12 +110,12 @@ class Reviews_Spr(models.Model):
 
 # 4.5
 class Reviews_Prodoctorov(models.Model):
-    prodoctorov = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    full_name = models.CharField(max_length=50)
-    review = models.CharField(max_length=1000)
-    date = models.DateField()
-    source = models.URLField(max_length = 200)
-    stars = models.IntegerField(default=0)
+    Reviews_Prodoctorov_prodoctorov = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    Reviews_Prodoctorov_full_name = models.CharField(max_length=50)
+    Reviews_Prodoctorov_review = models.CharField(max_length=1000)
+    Reviews_Prodoctorov_date = models.DateField()
+    Reviews_Prodoctorov_source = models.URLField(max_length = 200)
+    Reviews_Prodoctorov_stars = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = "Отзывы Продокторов"
@@ -124,12 +124,12 @@ class Reviews_Prodoctorov(models.Model):
 
 # 4.6
 class Reviews_Yell(models.Model):
-    yell = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    full_name = models.CharField(max_length=50)
-    review = models.CharField(max_length=1000)
-    date = models.DateField()
-    source = models.URLField(max_length = 200)
-    stars = models.IntegerField(default=0)
+    Reviews_Yell_yell = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    Reviews_Yell_full_name = models.CharField(max_length=50)
+    Reviews_Yell_review = models.CharField(max_length=1000)
+    Reviews_Yell_date = models.DateField()
+    Reviews_Yell_source = models.URLField(max_length = 200)
+    Reviews_Yell_stars = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = "Отзывы Йелл"
@@ -138,10 +138,10 @@ class Reviews_Yell(models.Model):
         
 # 5
 class Orthodontics(models.Model):
-    orthodontics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/orthodontics_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Orthodontics_orthodontics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Orthodontics_image = models.ImageField(upload_to='../static/images/orthodontics_images')
+    Orthodontics_title = models.CharField(max_length=50)
+    Orthodontics_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Ортодонтия"
@@ -150,10 +150,10 @@ class Orthodontics(models.Model):
 
 # 6
 class Implantology(models.Model):
-    implantology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/implantology_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Implantology_implantology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Implantology_image = models.ImageField(upload_to='../static/images/implantology_images')
+    Implantology_title = models.CharField(max_length=50)
+    Implantology_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Имплантология"
@@ -162,10 +162,10 @@ class Implantology(models.Model):
         
 # 7
 class Functional_Dentistry(models.Model):
-    functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/functional_dentistry_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Functional_Dentistry_functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Functional_Dentistry_image = models.ImageField(upload_to='../static/images/functional_dentistry_images')
+    Functional_Dentistry_title = models.CharField(max_length=50)
+    Functional_Dentistry_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Функциональная стоматология"
@@ -174,10 +174,10 @@ class Functional_Dentistry(models.Model):
 
 # 8
 class Orthopedics(models.Model):
-    orthopedics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/orthopedics_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Orthopedics_orthopedics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Orthopedics_image = models.ImageField(upload_to='../static/images/orthopedics_images')
+    Orthopedics_title = models.CharField(max_length=50)
+    Orthopedics_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Ортопедия"
@@ -186,10 +186,10 @@ class Orthopedics(models.Model):
         
 # 9
 class Periodontology(models.Model):
-    periodontology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/periodontology_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Periodontology_periodontology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Periodontology_image = models.ImageField(upload_to='../static/images/periodontology_images')
+    Periodontology_title = models.CharField(max_length=50)
+    Periodontology_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Парадонтология"
@@ -198,10 +198,10 @@ class Periodontology(models.Model):
         
 # 10
 class Therapy(models.Model):
-    therapy = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/therapy_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Therapy_therapy = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Therapy_image = models.ImageField(upload_to='../static/images/therapy_images')
+    Therapy_title = models.CharField(max_length=50)
+    Therapy_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Терапия"
@@ -210,10 +210,10 @@ class Therapy(models.Model):
         
 # 11
 class Surgery(models.Model):
-    surgery = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    image = models.ImageField(upload_to='../static/images/surgery_images')
-    title = models.CharField(max_length=50)
-    about = models.CharField(max_length=1000)
+    Surgery_surgery = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
+    Surgery_image = models.ImageField(upload_to='../static/images/surgery_images')
+    Surgery_title = models.CharField(max_length=50)
+    Surgery_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Хирургия"
@@ -222,11 +222,11 @@ class Surgery(models.Model):
         
 # 12
 class Doctors(models.Model):
-    name = models.CharField(max_length=30)
-    surname = models.CharField(max_length=50)
-    middle_name = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to='../static/images/doctors_images')
-    about = models.CharField(max_length=1000)
+    Doctors_name = models.CharField(max_length=30)
+    Doctors_surname = models.CharField(max_length=50)
+    Doctors_middle_name = models.CharField(max_length=50)
+    Doctors_photo = models.ImageField(upload_to='../static/images/doctors_images')
+    Doctors_about = models.CharField(max_length=1000)
 
     class Meta:
         verbose_name = "Доктора"
@@ -234,26 +234,26 @@ class Doctors(models.Model):
 
 
 class Instagram_Links(models.Model):
-    title = models.CharField(max_length=100)
-    instagram_links_images = models.ImageField(upload_to='../static/images/instagram_links_images')
-    link = models.URLField(max_length = 200)
+    Instagram_Links_title = models.CharField(max_length=100)
+    Instagram_Links_images = models.ImageField(upload_to='../static/images/instagram_links_images')
+    Instagram_Links_link = models.URLField(max_length = 200)
 
     class Meta:
         verbose_name = "Наш инстаграм"
         verbose_name_plural = "Наш инстаграм"
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=50)
-    # phone = PhoneNumberField(null=False, blank=False, unique=True)
+    Feedback_name = models.CharField(max_length=50)
+    Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
 
     class Meta:
         verbose_name = "Обратная связь"
         verbose_name_plural = "Обратная связь"
 
 class Make_An_Appointment(models.Model):
-    name = models.CharField(max_length=50)
-    # phone = PhoneNumberField(null=False, blank=False, unique=True)
-    mail = models.EmailField(max_length = 254)
+    Make_An_Appointment_name = models.CharField(max_length=50)
+    Make_An_Appointment_phone = PhoneNumberField(null=False, blank=False, unique=True)
+    Make_An_Appointment_mail = models.EmailField(max_length = 254)
 
     class Meta:
         verbose_name = "Запись на приём"
