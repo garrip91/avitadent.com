@@ -233,11 +233,6 @@ class Doctors(models.Model):
         verbose_name_plural = "Доктора"
 
 
-
-
-
-
-
 class Instagram_Links(models.Model):
     title = models.CharField(max_length=100)
     instagram_links_images = models.ImageField(upload_to='../static/images/instagram_links_images')
