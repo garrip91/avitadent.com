@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='home_page'), # AvitaDent
+    path('', HomePageView.as_view(), name='/'), # AvitaDent
     path('services/', ServicesPageView.as_view(), name='services'), # Услуги
     path('actions/', ActionsPageView.as_view(), name='actions'), # Акции
     path('gallery/', GalleryPageView.as_view(), name='gallery'), # Работы
