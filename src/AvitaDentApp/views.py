@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
+from .models import Actions
 
 
 
@@ -23,10 +24,28 @@ class ServicesPageView(View):
 
 class ActionsPageView(View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    template_name = 'AvitaDentApp/actions.html'
+
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/actions.html', context={})
+
+    # def get_context_data(self, **kwargs):
+        # context = super().get_context_data(**kwargs)
+        # context['actions'] = Actions.objects.all()
+        # return context
+        
+    def get(self, request, *args, **kwargs):
+        actions = Actions.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/actions.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/actions.html',
+            {
+                'actions': actions,
+            }
+        )
 
 
 class GalleryPageView(View):

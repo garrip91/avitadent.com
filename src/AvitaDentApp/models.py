@@ -20,9 +20,10 @@ class Services(models.Model):
         
         
 # 2
-class Stocks(models.Model):
-    Stocks_title = models.CharField(max_length=100, verbose_name='Заголовок акции')
-    Stocks_gallery = models.ImageField(upload_to='images/stocks_gallery_images')
+class Actions(models.Model):
+    Actions_title = models.CharField(max_length=100, verbose_name='Заголовок акции')
+    Actions_webp = models.ImageField(upload_to='images/actions_gallery_images/webp', blank=True, null=True)
+    Actions_gallery = models.ImageField(upload_to='images/actions_gallery_images')
 
     class Meta:
         verbose_name = "Акции"
