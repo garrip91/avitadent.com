@@ -21,12 +21,13 @@ class Services(models.Model):
         
 # 2
 class Stocks(models.Model):
-    Stocks_title = models.CharField(max_length=100)
+    Stocks_title = models.CharField(max_length=100, verbose_name='Заголовок акции')
     Stocks_gallery = models.ImageField(upload_to='images/stocks_gallery_images')
 
     class Meta:
         verbose_name = "Акции"
         verbose_name_plural = "Акции"
+        ordering = ['id']
         
         
 # 3
