@@ -24,7 +24,7 @@ class ServicesPageView(View):
 
 class ActionsPageView(View):
 
-    template_name = 'AvitaDentApp/actions.html'
+    # template_name = 'AvitaDentApp/actions.html'
 
     # def get(self, request):
         # #user_form = UserForm()
