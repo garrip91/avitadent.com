@@ -1,17 +1,28 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Actions
+from .models import Actions, Services
 
 
 
 # Create your views here.
 class HomePageView(View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/home.html', context={})
+        
+    def get(self, request, *args, **kwargs):
+        services = Services.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/home.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/home.html',
+            {
+                'services': services,
+            }
+        )
         
         
 class ServicesPageView(View):
