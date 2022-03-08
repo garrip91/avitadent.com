@@ -19,7 +19,7 @@ class ServicesAdmin(admin.ModelAdmin):
         # return F'{obj.comment[:100]}...'
     # get_short_comment.short_description = 'comment'
     
-    list_display = ('Services_orthodontics', 'Services_implantology', 'Services_functional_dentistry', 'Services_orthopedics', 'Services_therapy', 'Services_periodontology', 'Services_surgery')
+    list_display = ('Services_title',)
     
     
 class ActionsAdmin(admin.ModelAdmin):

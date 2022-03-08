@@ -6,22 +6,24 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 # 1
 class Services(models.Model):
-    Services_orthodontics = models.CharField(max_length=50)
-    Services_implantology = models.CharField(max_length=50)
-    Services_functional_dentistry = models.CharField(max_length=50)
-    Services_orthopedics = models.CharField(max_length=50)
-    Services_therapy = models.CharField(max_length=50)
-    Services_periodontology = models.CharField(max_length=50)
-    Services_surgery = models.CharField(max_length=50)
+    # Services_orthodontics = models.CharField(max_length=50, verbose_name='Название услуги')
+    # Services_implantology = models.CharField(max_length=50, verbose_name='Название услуги')
+    # Services_functional_dentistry = models.CharField(max_length=50, verbose_name='Название услуги')
+    # Services_orthopedics = models.CharField(max_length=50, verbose_name='Название услуги')
+    # Services_periodontology = models.CharField(max_length=50, verbose_name='Название услуги')
+    # Services_therapy = models.CharField(max_length=50, verbose_name='Название услуги')
+    # Services_surgery = models.CharField(max_length=50, verbose_name='Название услуги')
+    Services_title = models.CharField(max_length=50, verbose_name='Название услуги')
 
     class Meta:
         verbose_name = "Услуги"
         verbose_name_plural = "Услуги"
+        ordering = ['id']
         
         
 # 2
 class Actions(models.Model):
-    Actions_title = models.CharField(max_length=100, verbose_name='Заголовок акции')
+    Actions_title = models.CharField(max_length=100, verbose_name='Название акции')
     Actions_webp = models.ImageField(upload_to='images/actions_gallery_images/webp', blank=True, null=True)
     Actions_gallery = models.ImageField(upload_to='images/actions_gallery_images')
 
