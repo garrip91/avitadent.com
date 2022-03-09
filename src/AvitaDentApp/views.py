@@ -18,7 +18,7 @@ class TestView(View):
         #user_form = UserForm()
         print(F'request.path == {self.request.path}')
         #return render(request, 'test.html', context={})
-        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER/#popup'))
+        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER/test/'))
 ###########################
 
 
