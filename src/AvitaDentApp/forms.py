@@ -20,8 +20,8 @@ class FeedbackForm(forms.ModelForm):
         model = Feedback
         fields = ['Feedback_name', 'Feedback_phone']
         widgets = {
-            'Feedback_name': forms.TextInput(attrs={'class': 'form-control input-lg', 'placeholder': 'Заголовок текста'}),
-            'text': forms.Textarea(attrs={'class': 'form-control', 'rows': '9', 'placeholder': 'Текст'}),
+            'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input'}),
+            'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Телефон', 'class': 'input _req _phone'}),
         }
         
         
