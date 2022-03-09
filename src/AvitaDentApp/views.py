@@ -4,6 +4,10 @@ from django.views import View
 from .models import Actions, Services
 from .forms import FeedbackForm
 
+from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 
 # Create your views here.
@@ -13,7 +17,8 @@ class TestView(View):
     def get(self, request):
         #user_form = UserForm()
         print(F'request.path == {self.request.path}')
-        return render(request, 'test.html', context={})
+        #return render(request, 'test.html', context={})
+        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
 ###########################
 
 
