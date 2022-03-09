@@ -2,10 +2,30 @@ from django.shortcuts import render
 
 from django.views import View
 from .models import Actions, Services
+from .forms import FeedbackForm
 
 
 
 # Create your views here.
+###### ДЛЯ ПРОВЕРКИ: ######
+#class BaseView(View):
+###########################
+
+
+class FeedbackFormView(View):
+
+    form_class = FeedbackForm
+    initial = {'key': 'value'}
+    template_name = 'feedback_form_template.html'
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            pass
+            #return HttpResponseRedirect('/success/')
+        return render(request, self.template_name, {'form': form})
+
+
 class HomePageView(View):
 
     # def get(self, request):

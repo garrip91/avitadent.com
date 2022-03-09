@@ -19,10 +19,10 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
         fields = ['Feedback_name', 'Feedback_phone']
-        widgets = {
-            'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input'}),
-            'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Телефон', 'class': 'input _req _phone'}),
-        }
+        # widgets = {
+            # 'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input'}),
+            # 'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'input'}),
+        # }
         
         
 #<div class="popup__form">
