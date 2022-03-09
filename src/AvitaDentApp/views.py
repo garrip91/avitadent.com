@@ -28,9 +28,6 @@ class FeedbackFormView(View):
         ###### ВРЕМЕННО: ######
         print(F'request.path == {self.request.path}')
         #######################
-        if form.is_valid():
-            pass
-            #return HttpResponseRedirect('/success/')
         return render(request, self.template_name, {'form': form})
     #######################
     def post(self, request, *args, **kwargs):
