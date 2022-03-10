@@ -33,15 +33,19 @@ class FeedbackForm(forms.ModelForm):
         # Feedback_phone = forms.CharField(widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'input _req _phone', 'required': True}))
         #########################
         ###### ВАРИАНТ № 3 ######
-        widgets = {
-            'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'form-input', 'required': True}),
-            'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'form-input', 'required': True}),
-        }
+        # widgets = {
+            # 'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'form-input', 'required': True}),
+            # 'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'form-input', 'required': True}),
+        # }
         #########################
         #########################
         ###### ВАРИАНТ № 4 ######
         # Feedback_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input'}))
         # Feedback_phone = forms.CharField(required=True, widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'input'}))
+        #########################
+        ###### ВАРИАНТ № 5 ######
+        Feedback_name = forms.CharField(required=True, error_messages={'required': "Ошибка"}, help_text="Введите имя", widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-value': 'Введите имя', 'class': 'input'}))
+        Feedback_phone = forms.CharField(required=True, help_text="Введите телефон", error_messages={'required': "Ошибка"},  widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-value': 'Введите телефон', 'class': 'form-control'}))
         #########################
         
         
