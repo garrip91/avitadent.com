@@ -23,10 +23,10 @@ class FeedbackForm(forms.ModelForm):
         model = Feedback
         fields = ['Feedback_name', 'Feedback_phone']
         ###### ВАРИАНТ № 1 ######
-        # widgets = {
-            # 'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input', 'required': True}),
-            # 'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'input _req _phone', 'required': True}),
-        # }
+        widgets = {
+            'Feedback_name': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input', 'required': True}),
+            'Feedback_phone': forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'input _req _phone', 'required': True}),
+        }
         #########################
         ###### ВАРИАНТ № 2 ######
         # Feedback_name = forms.CharField(widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-error': 'Ошибка', 'data-value': 'Введите имя', 'class': 'input', 'required': True}))
