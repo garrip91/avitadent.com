@@ -8,6 +8,8 @@ from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+from .mixins import MyFormMixin
+
 
 
 # Create your views here.
@@ -46,14 +48,16 @@ class FeedbackFormView(View):
         return render(request, self.template_name, {'form': form})
 
 
-class HomePageView(View):
+class HomePageView(MyFormMixin, View):
 
     # def get(self, request):
         # #user_form = UserForm()
         # print(F'request.path == {self.request.path}')
         # return render(request, 'AvitaDentApp/home.html', context={})
-        
+    
+    form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
         services = Services.objects.all()
         print(F'request.path == {self.request.path}')
         return render(
@@ -61,6 +65,7 @@ class HomePageView(View):
             'AvitaDentApp/home.html',
             {
                 'services': services,
+                'form': form
             }
         )
         
