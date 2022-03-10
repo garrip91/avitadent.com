@@ -20,11 +20,12 @@ class MyFormMixin(View):
                 Feedback_phone = feedback_form.cleaned_data.get('Feedback_phone')
                 print(Feedback_phone)
                 print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                 return HttpResponseRedirect(self.request.path)
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
-                messages.error(request, 'ВАША ЗАЯВКА НЕ ОТПРАВЛЕНА!')
-                return HttpResponseRedirect(self.request.path)
+                messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
+                return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
         else:
             self.feedback_form = FeedbackForm()
         #####################################################################################

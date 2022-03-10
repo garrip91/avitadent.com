@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from .mixins import MyFormMixin
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 
@@ -48,7 +49,7 @@ class FeedbackFormView(View):
         return render(request, self.template_name, {'form': form})
 
 
-class HomePageView(MyFormMixin, View):
+class HomePageView(MyFormMixin, SuccessMessageMixin, View):
 
     # def get(self, request):
         # #user_form = UserForm()
