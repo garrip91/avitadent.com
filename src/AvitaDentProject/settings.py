@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'AvitaDentApp',
     'phonenumber_field',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
