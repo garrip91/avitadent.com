@@ -44,8 +44,12 @@ class FeedbackForm(forms.ModelForm):
         # Feedback_phone = forms.CharField(required=True, widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-error': 'Ошибка', 'data-value': 'Введите телефон', 'class': 'input'}))
         #########################
         ###### ВАРИАНТ № 5 ######
-        Feedback_name = forms.CharField(required=True, error_messages={'required': "Ошибка"}, help_text="Введите имя", widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-value': 'Введите имя', 'class': 'input'}))
-        Feedback_phone = forms.CharField(required=True, help_text="Введите телефон", error_messages={'required': "Ошибка"},  widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-value': 'Введите телефон', 'class': 'form-control'}))
+        # Feedback_name = forms.CharField(required=True, error_messages={'required': "Ошибка"}, help_text="Введите имя", widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'text', 'data-value': 'Введите имя', 'class': 'input'}))
+        # Feedback_phone = forms.CharField(required=True, help_text="Введите телефон", error_messages={'required': "Ошибка"},  widget=forms.TextInput(attrs={'autocomplete': 'off', 'type': 'tel', 'data-value': 'Введите телефон', 'class': 'form-control'}))
+        #########################
+        ###### ВАРИАНТ № 6 ######
+        Feedback_name = forms.CharField(required=True)
+        Feedback_phone = forms.CharField(required=True)
         #########################
         
         
