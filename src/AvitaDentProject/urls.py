@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView, TestView, FeedbackFormView
+from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView, TestView
+#, FeedbackFormView
 
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('test/', TestView.as_view(), name='test_view'), # Страница теста
-    path('form_test/', FeedbackFormView.as_view(), name='feedback_form'), # Страница перехода на форму обратной связи
+    #path('form_test/', FeedbackFormView.as_view(), name='feedback_form'), # Страница перехода на форму обратной связи
     path('', HomePageView.as_view(), name='/'), # AvitaDent
     path('services/', ServicesPageView.as_view(), name='services'), # Услуги
     path('actions/', ActionsPageView.as_view(), name='actions'), # Акции
