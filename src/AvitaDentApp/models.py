@@ -2,6 +2,8 @@ from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
 
+# ДЛЯ ДОБАВЛЕНИЯ:
+# blank=True, null=True
 
 
 # 1
@@ -13,7 +15,7 @@ class Services(models.Model):
     # Services_periodontology = models.CharField(max_length=50, verbose_name='Название услуги')
     # Services_therapy = models.CharField(max_length=50, verbose_name='Название услуги')
     # Services_surgery = models.CharField(max_length=50, verbose_name='Название услуги')
-    Services_title = models.CharField(max_length=100, verbose_name='Название услуги')
+    Services_title = models.CharField(blank=True, null=True, max_length=100, verbose_name='Название услуги')
     Services_webp = models.ImageField(blank=True, null=True, upload_to='images/services_gallery_images/webp', verbose_name='WEBP-изображение услуги')
     Services_gallery = models.ImageField(blank=True, null=True, upload_to='images/services_gallery_images', verbose_name='Обычное изображение услуги')
 
@@ -26,8 +28,8 @@ class Services(models.Model):
 # 2
 class Actions(models.Model):
     Actions_title = models.CharField(max_length=100, verbose_name='Название акции')
-    Actions_webp = models.ImageField(blank=True, null=True, upload_to='images/actions_gallery_images/webp', verbose_name='WEBP-изображение акции')
-    Actions_gallery = models.ImageField(blank=True, null=True, upload_to='images/actions_gallery_images', verbose_name='Обычное изображение акции')
+    Actions_webp = models.ImageField(upload_to='images/actions_gallery_images/webp', verbose_name='WEBP-изображение акции')
+    Actions_gallery = models.ImageField(upload_to='images/actions_gallery_images', verbose_name='Обычное изображение акции')
 
     class Meta:
         verbose_name = "Акции"
@@ -251,7 +253,8 @@ class Instagram_Links(models.Model):
 
 class Feedback(models.Model):
     Feedback_name = models.CharField(max_length=50)
-    Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
+    #Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
+    Feedback_phone = models.CharField(max_length=17, unique=True)
 
     class Meta:
         verbose_name = "Обратная связь"

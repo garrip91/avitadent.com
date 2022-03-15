@@ -1,0 +1,345 @@
+[
+{
+    "model": "AvitaDentApp.services",
+    "pk": 9,
+    "fields": {
+        "Services_title": "Лечение кариеса зубов любой категории с гарантией до 2 лет",
+        "Services_webp": "images/services_gallery_images/webp/offer1.webp",
+        "Services_gallery": "images/services_gallery_images/offer1.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 10,
+    "fields": {
+        "Services_title": "Протезирование зубов",
+        "Services_webp": "images/services_gallery_images/webp/offer2.webp",
+        "Services_gallery": "images/services_gallery_images/offer2.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 11,
+    "fields": {
+        "Services_title": "ICON - лечение начального кариеса без бормашины",
+        "Services_webp": "images/services_gallery_images/webp/offer3.webp",
+        "Services_gallery": "images/services_gallery_images/offer3.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 12,
+    "fields": {
+        "Services_title": "Диагностика состояния зубов у детей",
+        "Services_webp": "images/services_gallery_images/webp/offer4.webp",
+        "Services_gallery": "images/services_gallery_images/offer4.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 13,
+    "fields": {
+        "Services_title": "Исправление искривления прикуса любой сложности, учитывая ВНЧС",
+        "Services_webp": "images/services_gallery_images/webp/offer-ortp1.webp",
+        "Services_gallery": "images/services_gallery_images/offer-ort1.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 14,
+    "fields": {
+        "Services_title": "Лечение прикуса брекет-системами",
+        "Services_webp": "images/services_gallery_images/webp/offer-ort2.webp",
+        "Services_gallery": "images/services_gallery_images/offer-ort2.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 15,
+    "fields": {
+        "Services_title": "Лечение прикуса капами",
+        "Services_webp": "images/services_gallery_images/webp/offer-ort3.webp",
+        "Services_gallery": "images/services_gallery_images/offer-ort3.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 16,
+    "fields": {
+        "Services_title": "Лечение прикуса еврокапами",
+        "Services_webp": "images/services_gallery_images/webp/offer-ort3_QdhBw7h.webp",
+        "Services_gallery": "images/services_gallery_images/offer-ort3_RZu98rc.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 17,
+    "fields": {
+        "Services_title": "Лечение прикуса системой INVISALIGN",
+        "Services_webp": "images/services_gallery_images/webp/offer-ort4.webp",
+        "Services_gallery": "images/services_gallery_images/offer-ort4.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 18,
+    "fields": {
+        "Services_title": "Лечение уникальным методом исправления прикуса, выставляющим центральное соотношение челюстей",
+        "Services_webp": "images/services_gallery_images/webp/offer-ort5_NDThcYf.webp",
+        "Services_gallery": "images/services_gallery_images/offer-ort5.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 19,
+    "fields": {
+        "Services_title": "Уникальные трабекулярные импланты ZIMMEK",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp1.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp1.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 20,
+    "fields": {
+        "Services_title": "Синус-лифтинг",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp2.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp2.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 21,
+    "fields": {
+        "Services_title": "Закрытие рецессий",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp3.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp3.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 22,
+    "fields": {
+        "Services_title": "Наращивание костной ткани с использованием титановых сеток",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp4.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp4.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 23,
+    "fields": {
+        "Services_title": "Наращивание костной ткани методом по Manro Merli (Италия)",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp5.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp5.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 24,
+    "fields": {
+        "Services_title": "Уникальная технология по 3D реконструкциям костной ткани",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp6.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp6.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 25,
+    "fields": {
+        "Services_title": "Навигационная имплантация (всё под контролем КЛКТ)",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp7.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp7.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 26,
+    "fields": {
+        "Services_title": "Работа под увеличением",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp8.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp8.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 27,
+    "fields": {
+        "Services_title": "Использование iPRF мембран",
+        "Services_webp": "images/services_gallery_images/webp/offer-imp9.webp",
+        "Services_gallery": "images/services_gallery_images/offer-imp9.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 28,
+    "fields": {
+        "Services_title": "Лечение хрустов и щелчков",
+        "Services_webp": "images/services_gallery_images/webp/offer-fun2.webp",
+        "Services_gallery": "images/services_gallery_images/offer-fun2.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 29,
+    "fields": {
+        "Services_title": "Избавление от храпов и апноэ по уникальной технологии",
+        "Services_webp": "images/services_gallery_images/webp/offer-fun3.webp",
+        "Services_gallery": "images/services_gallery_images/offer-fun3.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 30,
+    "fields": {
+        "Services_title": "Использование тенс",
+        "Services_webp": "images/services_gallery_images/webp/offer-fun4.webp",
+        "Services_gallery": "images/services_gallery_images/offer-fun4.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 31,
+    "fields": {
+        "Services_title": "Лечение сплинт-шинами",
+        "Services_webp": "images/services_gallery_images/webp/offer-fun5.webp",
+        "Services_gallery": "images/services_gallery_images/offer-fun5.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 32,
+    "fields": {
+        "Services_title": "Использование аксиографии",
+        "Services_webp": "images/services_gallery_images/webp/offer-fun6.webp",
+        "Services_gallery": "images/services_gallery_images/offer-fun6.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.services",
+    "pk": 33,
+    "fields": {
+        "Services_title": "Лечение дисфункции ВНЧС под контролем МРТ",
+        "Services_webp": "images/services_gallery_images/webp/offer-fun7.webp",
+        "Services_gallery": "images/services_gallery_images/offer-fun7.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.actions",
+    "pk": 1,
+    "fields": {
+        "Actions_title": "Скидка 20% на имплантацию",
+        "Actions_webp": "images/actions_gallery_images/webp/action1.webp",
+        "Actions_gallery": "images/actions_gallery_images/action1.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.actions",
+    "pk": 2,
+    "fields": {
+        "Actions_title": "Скидка 20% на установку брекетов",
+        "Actions_webp": "images/actions_gallery_images/webp/action2.webp",
+        "Actions_gallery": "images/actions_gallery_images/action2.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.actions",
+    "pk": 3,
+    "fields": {
+        "Actions_title": "При заказе профессиональной гигиены полости рта КТ бесплатно",
+        "Actions_webp": "images/actions_gallery_images/webp/action3.webp",
+        "Actions_gallery": "images/actions_gallery_images/action3.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.actions",
+    "pk": 4,
+    "fields": {
+        "Actions_title": "Всё на 6 имплантах за 500 000р. (одна челюсть) под ключ до конца сентября",
+        "Actions_webp": "images/actions_gallery_images/webp/offer3.webp",
+        "Actions_gallery": "images/actions_gallery_images/offer3.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.actions",
+    "pk": 5,
+    "fields": {
+        "Actions_title": "Виниры без обточки",
+        "Actions_webp": "images/actions_gallery_images/webp/offer4.webp",
+        "Actions_gallery": "images/actions_gallery_images/offer4.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.actions",
+    "pk": 6,
+    "fields": {
+        "Actions_title": "Лечение дисфункции ВНЧС",
+        "Actions_webp": "images/actions_gallery_images/webp/offer2.webp",
+        "Actions_gallery": "images/actions_gallery_images/offer2.jpg"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 1,
+    "fields": {
+        "Feedback_name": "dwdwdw",
+        "Feedback_phone": "+78799846545"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 2,
+    "fields": {
+        "Feedback_name": "Введите имя",
+        "Feedback_phone": "+79999999999"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 3,
+    "fields": {
+        "Feedback_name": "Введите имя",
+        "Feedback_phone": "+79899595959"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 7,
+    "fields": {
+        "Feedback_name": "7657968jhgjh;l;'';'bcxds",
+        "Feedback_phone": "+79651258745"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 9,
+    "fields": {
+        "Feedback_name": "sadasdasd",
+        "Feedback_phone": "+79201561358"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 10,
+    "fields": {
+        "Feedback_name": "ДАДЫ",
+        "Feedback_phone": "+79874562145"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 11,
+    "fields": {
+        "Feedback_name": "ddd",
+        "Feedback_phone": "#1"
+    }
+},
+{
+    "model": "AvitaDentApp.feedback",
+    "pk": 12,
+    "fields": {
+        "Feedback_name": "DDDDDDDD",
+        "Feedback_phone": "#2"
+    }
+}
+]
