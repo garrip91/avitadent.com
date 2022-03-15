@@ -72,12 +72,26 @@ class HomePageView(MyFormMixin, SuccessMessageMixin, View):
         )
         
         
-class ServicesPageView(View):
+class ServicesPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/services.html', context={})
+        
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        services = Services.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/services.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/services.html',
+            {
+                'services': services,
+                'form': form
+            }
+        )
 
 
 class ActionsPageView(View):
