@@ -259,6 +259,7 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = "Обратная связь"
         verbose_name_plural = "Обратная связь"
+        ordering = ['id']
 
 class Make_An_Appointment(models.Model):
     Make_An_Appointment_name = models.CharField(max_length=50)
