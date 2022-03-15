@@ -13,6 +13,7 @@ class MyFormMixin(View):
         #################### РЕАЛИЗУЕМ ПОЛУЧЕНИЕ ЗАЯВКИ ОТ ПОЛЬЗОВАТЕЛЯ: ####################
         if request.method == 'POST' and 'feedback' in request.POST:
             feedback_form = FeedbackForm(request.POST)
+            print(feedback_form)
             if feedback_form.is_valid():
                 feedback_form.save()
                 Feedback_name = feedback_form.cleaned_data.get('Feedback_name')
