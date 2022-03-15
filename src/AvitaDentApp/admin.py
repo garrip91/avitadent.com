@@ -24,7 +24,7 @@ class ServicesAdmin(admin.ModelAdmin):
     get_image.short_description = 'Изображение'
     
     #list_display = ('Services_title', 'Services_webp', 'Services_gallery')
-    list_display = ('Services_title', 'Services_webp', 'get_image')
+    list_display = ('Services_title', 'Services_webp', 'get_image', 'id')
     readonly_fields = ('get_image',)
     
     
@@ -45,7 +45,7 @@ class ActionsAdmin(admin.ModelAdmin):
     get_image.short_description = 'Изображение'    
     
     #list_display = ('Actions_title', 'Actions_gallery')
-    list_display = ('Actions_title', 'Actions_webp', 'get_image')
+    list_display = ('Actions_title', 'Actions_webp', 'get_image', 'id')
     #readonly_fields = ('Actions_gallery',)
     readonly_fields = ('get_image',)
     
@@ -67,7 +67,7 @@ class FeedbackAdmin(admin.ModelAdmin):
     # get_image.short_description = 'Изображение'    
     
     #list_display = ('Actions_title', 'Actions_gallery')
-    list_display = ('Feedback_name', 'Feedback_phone')
+    list_display = ('Feedback_name', 'Feedback_phone', 'id')
     #readonly_fields = ('get_image',)
     
     
