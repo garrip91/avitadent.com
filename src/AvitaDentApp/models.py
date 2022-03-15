@@ -45,6 +45,7 @@ class Gallery(models.Model):
     class Meta:
         verbose_name = "Галерея работ"
         verbose_name_plural = "Галерея работ"
+        ordering = ['id']
         
         
 # 4

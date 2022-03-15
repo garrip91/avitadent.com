@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Actions, Services
+from .models import Services, Actions, Gallery
 from .forms import FeedbackForm
 
 from django.shortcuts import redirect
@@ -74,11 +74,6 @@ class HomePageView(MyFormMixin, SuccessMessageMixin, View):
         
 class ServicesPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    # def get(self, request):
-        # #user_form = UserForm()
-        # print(F'request.path == {self.request.path}')
-        # return render(request, 'AvitaDentApp/services.html', context={})
-        
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -96,19 +91,9 @@ class ServicesPageView(MyFormMixin, SuccessMessageMixin, View):
 
 class ActionsPageView(View):
 
-    # template_name = 'AvitaDentApp/actions.html'
-
-    # def get(self, request):
-        # #user_form = UserForm()
-        # print(F'request.path == {self.request.path}')
-        # return render(request, 'AvitaDentApp/actions.html', context={})
-
-    # def get_context_data(self, **kwargs):
-        # context = super().get_context_data(**kwargs)
-        # context['actions'] = Actions.objects.all()
-        # return context
-        
+    form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
         actions = Actions.objects.all()
         print(F'request.path == {self.request.path}')
         return render(
@@ -116,16 +101,30 @@ class ActionsPageView(View):
             'AvitaDentApp/actions.html',
             {
                 'actions': actions,
+                'form': form
             }
         )
 
 
 class GalleryPageView(View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/gallery.html', context={})
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        gallery = Gallery.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/gallery.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/gallery.html',
+            {
+                'gallery': gallery,
+                'form': form
+            }
+        )
 
 
 class ClinicPageView(View):
