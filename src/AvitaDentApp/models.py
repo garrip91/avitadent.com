@@ -40,7 +40,8 @@ class Actions(models.Model):
 # 3
 class Gallery(models.Model):
     Gallery_title = models.CharField(max_length=100)
-    Gallery_photo_gallery = models.ImageField(upload_to='images/gallery_images')
+    Gallery_webp = models.ImageField(blank=True, null=True, upload_to='images/gallery_gallery_images/webp', verbose_name='WEBP-изображение галереи')
+    Gallery_photo_gallery = models.ImageField(upload_to='images/gallery_gallery_images', verbose_name='Обычное изображение галереи')
 
     class Meta:
         verbose_name = "Галерея работ"
