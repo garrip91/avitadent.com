@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Services, Actions, Feedback, Gallery
+from .models import Services, Actions, Feedback, Gallery, Reviews
 
 from django.utils.safestring import mark_safe
 
@@ -62,7 +62,16 @@ class GalleryAdmin(admin.ModelAdmin):
     readonly_fields = ('get_image',)
     
     
+class ReviewsAdmin(admin.ModelAdmin):
+    
+    class Meta:
+        model = Reviews
+
+    list_display = ('Reviews_name', 'Reviews_date', 'Reviews_source', 'Reviews_text', 'id')
+    
+    
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(Gallery, GalleryAdmin)
+admin.site.register(Reviews, ReviewsAdmin)

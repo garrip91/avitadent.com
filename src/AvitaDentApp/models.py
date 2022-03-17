@@ -51,16 +51,21 @@ class Gallery(models.Model):
         
 # 4
 class Reviews(models.Model):
-    Reviews_yandex = models.CharField(max_length=50)
-    Reviews_google = models.CharField(max_length=50)
-    Reviews_zoon = models.CharField(max_length=50)
-    Reviews_spr = models.CharField(max_length=50)
-    Reviews_prodoctorov = models.CharField(max_length=50)
-    Reviews_yell = models.CharField(max_length=50)
+    # Reviews_yandex = models.CharField(max_length=50)
+    # Reviews_google = models.CharField(max_length=50)
+    # Reviews_zoon = models.CharField(max_length=50)
+    # Reviews_spr = models.CharField(max_length=50)
+    # Reviews_prodoctorov = models.CharField(max_length=50)
+    # Reviews_yell = models.CharField(max_length=50)
+    Reviews_name = models.CharField(max_length=50, verbose_name='Автор отзыва')
+    Reviews_date = models.CharField(max_length=50, verbose_name='Дата отзыва')
+    Reviews_source = models.CharField(max_length=50, verbose_name='Источник отзыва')
+    Reviews_text = models.CharField(blank=True, null=True, max_length=1000, verbose_name='Текст отзыва')
 
     class Meta:
         verbose_name = "Отзывы"
         verbose_name_plural = "Отзывы"
+        ordering = ['id']
 
 
 # 4.1

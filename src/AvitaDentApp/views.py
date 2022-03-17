@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Services, Actions, Gallery
+from .models import Services, Actions, Gallery, Reviews
 from .forms import FeedbackForm
 
 from django.shortcuts import redirect
@@ -89,7 +89,7 @@ class ServicesPageView(MyFormMixin, SuccessMessageMixin, View):
         )
 
 
-class ActionsPageView(View):
+class ActionsPageView(MyFormMixin, SuccessMessageMixin, View):
 
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
@@ -106,7 +106,7 @@ class ActionsPageView(View):
         )
 
 
-class GalleryPageView(View):
+class GalleryPageView(MyFormMixin, SuccessMessageMixin, View):
 
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
@@ -131,12 +131,25 @@ class ClinicPageView(View):
         return render(request, 'AvitaDentApp/clinic-page.html', context={})
 
 
-class ReviewsPageView(View):
+class ReviewsPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/reviews.html', context={})
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        reviews = Reviews.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/reviews.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/reviews.html',
+            {
+                'reviews': reviews,
+                'form': form
+            }
+        )
 
 
 class ContactsPageView(View):
