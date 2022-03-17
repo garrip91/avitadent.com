@@ -108,10 +108,6 @@ class ActionsPageView(View):
 
 class GalleryPageView(View):
 
-    # def get(self, request):
-        # #user_form = UserForm()
-        # print(F'request.path == {self.request.path}')
-        # return render(request, 'AvitaDentApp/gallery.html', context={})
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
