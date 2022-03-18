@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Services, Actions, Feedback, Gallery, Reviews
+from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics
 
 from django.utils.safestring import mark_safe
 
@@ -68,6 +68,19 @@ class ReviewsAdmin(admin.ModelAdmin):
         model = Reviews
 
     list_display = ('Reviews_name', 'Reviews_date', 'Reviews_source', 'Reviews_text', 'id')
+    
+    
+class OrthodonticsAdmin(admin.ModelAdmin):
+    
+    class Meta:
+        model = Orthodontics
+
+    def get_image(self, obj):
+        return mark_safe(F'<img src={obj.Gallery_photo_gallery.url} width="100" height="100">')
+    get_image.short_description = 'Изображение'    
+    
+    list_display = ('Gallery_title', 'Gallery_webp', 'get_image', 'id')
+    readonly_fields = ('get_image',)
     
     
 admin.site.register(Services, ServicesAdmin)

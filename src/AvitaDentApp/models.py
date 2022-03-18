@@ -160,6 +160,8 @@ class Orthodontics(models.Model):
     Orthodontics_image = models.ImageField(upload_to='images/orthodontics_images')
     Orthodontics_title = models.CharField(max_length=50)
     Orthodontics_about = models.CharField(max_length=1000)
+    Orthodontics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthodontics_webp/webp', verbose_name='WEBP-изображение страницы Ортодонтия')
+    Orthodontics_image = models.ImageField(upload_to='images/Orthodontics_images', verbose_name='Обычное изображение страницы Ортодонтия')
     Orthodontics_datetime = models.DateTimeField('Дата и время создания записи', default=timezone.now)
 
     class Meta:
