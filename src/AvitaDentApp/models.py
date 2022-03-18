@@ -2,6 +2,8 @@ from django.db import models
 
 from phonenumber_field.modelfields import PhoneNumberField
 
+from django.utils import timezone
+
 # ДЛЯ ДОБАВЛЕНИЯ:
 # blank=True, null=True
 
@@ -57,9 +59,9 @@ class Reviews(models.Model):
     # Reviews_spr = models.CharField(max_length=50)
     # Reviews_prodoctorov = models.CharField(max_length=50)
     # Reviews_yell = models.CharField(max_length=50)
-    Reviews_name = models.CharField(max_length=50, verbose_name='Автор отзыва')
-    Reviews_date = models.CharField(max_length=50, verbose_name='Дата отзыва')
-    Reviews_source = models.CharField(max_length=50, verbose_name='Источник отзыва')
+    Reviews_name = models.CharField(blank=True, null=True, max_length=50, verbose_name='Автор отзыва')
+    Reviews_date = models.CharField(blank=True, null=True, max_length=50, verbose_name='Дата отзыва')
+    Reviews_source = models.CharField(blank=True, null=True, max_length=50, verbose_name='Источник отзыва')
     Reviews_text = models.CharField(blank=True, null=True, max_length=1000, verbose_name='Текст отзыва')
 
     class Meta:
@@ -158,11 +160,12 @@ class Orthodontics(models.Model):
     Orthodontics_image = models.ImageField(upload_to='images/orthodontics_images')
     Orthodontics_title = models.CharField(max_length=50)
     Orthodontics_about = models.CharField(max_length=1000)
+    Orthodontics_datetime = models.DateTimeField('Дата и время создания записи', default=timezone.now)
 
     class Meta:
         verbose_name = "Ортодонтия"
         verbose_name_plural = "Ортодонтия"
-        ordering = ['id']
+        ordering = ['Orthodontics_datetime']
 
 
 # 6
