@@ -213,6 +213,9 @@ class FunctionalDentistry(models.Model):
     FunctionalDentistry_webp = models.ImageField(blank=True, null=True, upload_to='images/Functional_Dentistry_images/webp', verbose_name='WEBP-изображение страницы Функциональная стоматология')
     FunctionalDentistry_image = models.ImageField(upload_to='images/Functional_Dentistry_images', verbose_name='Обычное изображение страницы Функциональная стоматология')
 
+    def __str__(self):
+        return str(self.FunctionalDentistry_title)
+
     class Meta:
         verbose_name = "Функциональная стоматология"
         verbose_name_plural = "Функциональная стоматология"
@@ -227,6 +230,9 @@ class Orthopedics(models.Model):
     Orthopedics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthopedics_images/webp', verbose_name='WEBP-изображение страницы Ортопедия')
     Orthopedics_image = models.ImageField(upload_to='images/Orthopedics_images', verbose_name='Обычное изображение страницы Ортопедия')
 
+    def __str__(self):
+        return str(self.Orthopedics_title)
+
     class Meta:
         verbose_name = "Ортопедия"
         verbose_name_plural = "Ортопедия"
@@ -236,14 +242,18 @@ class Orthopedics(models.Model):
 # 9
 class Periodontology(models.Model):
     
-    Periodontology_periodontology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Periodontology_image = models.ImageField(upload_to='images/periodontology_images')
-    Periodontology_title = models.CharField(max_length=50)
-    Periodontology_about = models.CharField(max_length=1000)
+    Periodontology_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    Periodontology_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Парадонтология')
+    Periodontology_webp = models.ImageField(blank=True, null=True, upload_to='images/Periodontology_images/webp', verbose_name='WEBP-изображение страницы Парадонтология')
+    Periodontology_image = models.ImageField(upload_to='images/Periodontology_images', verbose_name='Обычное изображение страницы Парадонтология')
+
+    def __str__(self):
+        return str(self.Periodontology_title)
 
     class Meta:
         verbose_name = "Парадонтология"
         verbose_name_plural = "Парадонтология"
+        ordering = ['Periodontology_IntegerField']
         
         
 # 10
