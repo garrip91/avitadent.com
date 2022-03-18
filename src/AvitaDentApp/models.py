@@ -222,14 +222,15 @@ class FunctionalDentistry(models.Model):
 # 8
 class Orthopedics(models.Model):
     
-    Orthopedics_orthopedics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Orthopedics_image = models.ImageField(upload_to='images/orthopedics_images')
-    Orthopedics_title = models.CharField(max_length=50)
-    Orthopedics_about = models.CharField(max_length=1000)
+    Orthopedics_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    Orthopedics_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Ортопедия')
+    Orthopedics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthopedics_images/webp', verbose_name='WEBP-изображение страницы Ортопедия')
+    Orthopedics_image = models.ImageField(upload_to='images/Orthopedics_images', verbose_name='Обычное изображение страницы Ортопедия')
 
     class Meta:
         verbose_name = "Ортопедия"
         verbose_name_plural = "Ортопедия"
+        ordering = ['Orthopedics_IntegerField']
         
         
 # 9

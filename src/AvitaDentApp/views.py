@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Services, Actions, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry
+from .models import Services, Actions, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics
 from .forms import FeedbackForm
 
 from django.shortcuts import redirect
@@ -190,12 +190,8 @@ class ImplantologyPageView(MyFormMixin, SuccessMessageMixin, View):
         )
 
 
-class FunctionalDentistryPageView(View):
+class FunctionalDentistryPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    # def get(self, request):
-        # #user_form = UserForm()
-        # print(F'request.path == {self.request.path}')
-        # return render(request, 'AvitaDentApp/functional-dentistry.html', context={})
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -211,12 +207,25 @@ class FunctionalDentistryPageView(View):
         )
 
 
-class OrthopedicsPageView(View):
+class OrthopedicsPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/orthopedics.html', context={})
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        orthopedics = Orthopedics.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/orthopedics.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/orthopedics.html',
+            {
+                'orthopedics': orthopedics,
+                'form': form
+            }
+        )
 
 
 class PeriodontologyPageView(View):
