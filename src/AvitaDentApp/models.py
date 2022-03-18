@@ -21,6 +21,9 @@ class Services(models.Model):
     Services_webp = models.ImageField(blank=True, null=True, upload_to='images/services_gallery_images/webp', verbose_name='WEBP-изображение услуги')
     Services_gallery = models.ImageField(blank=True, null=True, upload_to='images/services_gallery_images', verbose_name='Обычное изображение услуги')
 
+    def __str__(self):
+        return self.Services_title
+
     class Meta:
         verbose_name = "Услуги"
         verbose_name_plural = "Услуги"
@@ -33,6 +36,9 @@ class Actions(models.Model):
     Actions_webp = models.ImageField(upload_to='images/actions_gallery_images/webp', verbose_name='WEBP-изображение акции')
     Actions_gallery = models.ImageField(upload_to='images/actions_gallery_images', verbose_name='Обычное изображение акции')
 
+    def __str__(self):
+        return self.Actions_title
+
     class Meta:
         verbose_name = "Акции"
         verbose_name_plural = "Акции"
@@ -44,6 +50,9 @@ class Gallery(models.Model):
     Gallery_title = models.CharField(max_length=100)
     Gallery_webp = models.ImageField(blank=True, null=True, upload_to='images/gallery_gallery_images/webp', verbose_name='WEBP-изображение галереи')
     Gallery_photo_gallery = models.ImageField(upload_to='images/gallery_gallery_images', verbose_name='Обычное изображение галереи')
+
+    def __str__(self):
+        return self.Gallery_title
 
     class Meta:
         verbose_name = "Галерея работ"
@@ -63,6 +72,9 @@ class Reviews(models.Model):
     Reviews_date = models.CharField(blank=True, null=True, max_length=50, verbose_name='Дата отзыва')
     Reviews_source = models.CharField(blank=True, null=True, max_length=50, verbose_name='Источник отзыва')
     Reviews_text = models.CharField(blank=True, null=True, max_length=1000, verbose_name='Текст отзыва')
+
+    def __str__(self):
+        return self.Reviews_text
 
     class Meta:
         verbose_name = "Отзывы"
@@ -156,13 +168,15 @@ class Reviews(models.Model):
         
 # 5
 class Orthodontics(models.Model):
-    Orthodontics_orthodontics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Orthodontics_image = models.ImageField(upload_to='images/orthodontics_images')
-    Orthodontics_title = models.CharField(max_length=50)
-    Orthodontics_about = models.CharField(max_length=1000)
+    Orthodontics_Services = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Связь с моделью УСЛУГИ')
+    Orthodontics_title = models.CharField(max_length=50, verbose_name='Название Ортодонтической УСЛУГИ')
+    Orthodontics_about = models.CharField(max_length=1000, verbose_name='Об Ортодонтии')
     Orthodontics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthodontics_webp/webp', verbose_name='WEBP-изображение страницы Ортодонтия')
     Orthodontics_image = models.ImageField(upload_to='images/Orthodontics_images', verbose_name='Обычное изображение страницы Ортодонтия')
     Orthodontics_datetime = models.DateTimeField('Дата и время создания записи', default=timezone.now)
+
+    def __str__(self):
+        return self.Orthodontics_title
 
     class Meta:
         verbose_name = "Ортодонтия"

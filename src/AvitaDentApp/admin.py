@@ -76,10 +76,10 @@ class OrthodonticsAdmin(admin.ModelAdmin):
         model = Orthodontics
 
     def get_image(self, obj):
-        return mark_safe(F'<img src={obj.Gallery_photo_gallery.url} width="100" height="100">')
+        return mark_safe(F'<img src={obj.Orthodontics_image.url} width="100" height="100">')
     get_image.short_description = 'Изображение'    
     
-    list_display = ('Gallery_title', 'Gallery_webp', 'get_image', 'id')
+    list_display = ('Orthodontics_Services', 'Orthodontics_title', 'Orthodontics_about', 'Orthodontics_webp', 'Orthodontics_image', 'Orthodontics_datetime')
     readonly_fields = ('get_image',)
     
     
@@ -88,3 +88,4 @@ admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Reviews, ReviewsAdmin)
+admin.site.register(Orthodontics, OrthodonticsAdmin)
