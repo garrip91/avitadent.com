@@ -175,10 +175,23 @@ class OrthodonticsPageView(MyFormMixin, SuccessMessageMixin, View):
 Implantology
 class ImplantologyPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/implantology.html', context={})
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        implantology = Implantology.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/implantology.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/implantology.html',
+            {
+                'implantology': implantology,
+                'form': form
+            }
+        )
 
 
 class FunctionalDentistryPageView(View):
