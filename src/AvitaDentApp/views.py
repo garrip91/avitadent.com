@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Services, Actions, Gallery, Reviews, Orthodontics
+from .models import Services, Actions, Gallery, Reviews, Orthodontics, Implantology
 from .forms import FeedbackForm
 
 from django.shortcuts import redirect
@@ -158,10 +158,6 @@ class ContactsPageView(View):
 
 class OrthodonticsPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    # def get(self, request):
-        # #user_form = UserForm()
-        # print(F'request.path == {self.request.path}')
-        # return render(request, 'AvitaDentApp/orthodontics.html', context={})
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -176,8 +172,8 @@ class OrthodonticsPageView(MyFormMixin, SuccessMessageMixin, View):
             }
         )
 
-
-class ImplantologyPageView(View):
+Implantology
+class ImplantologyPageView(MyFormMixin, SuccessMessageMixin, View):
 
     def get(self, request):
         #user_form = UserForm()

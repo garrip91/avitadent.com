@@ -10,6 +10,7 @@ from django.utils import timezone
 
 # 1
 class Services(models.Model):
+    
     # Services_orthodontics = models.CharField(max_length=50, verbose_name='Название услуги')
     # Services_implantology = models.CharField(max_length=50, verbose_name='Название услуги')
     # Services_functional_dentistry = models.CharField(max_length=50, verbose_name='Название услуги')
@@ -32,6 +33,7 @@ class Services(models.Model):
         
 # 2
 class Actions(models.Model):
+    
     Actions_title = models.CharField(max_length=100, verbose_name='Название акции')
     Actions_webp = models.ImageField(upload_to='images/actions_gallery_images/webp', verbose_name='WEBP-изображение акции')
     Actions_gallery = models.ImageField(upload_to='images/actions_gallery_images', verbose_name='Обычное изображение акции')
@@ -47,6 +49,7 @@ class Actions(models.Model):
         
 # 3
 class Gallery(models.Model):
+    
     Gallery_title = models.CharField(max_length=100)
     Gallery_webp = models.ImageField(blank=True, null=True, upload_to='images/gallery_gallery_images/webp', verbose_name='WEBP-изображение галереи')
     Gallery_photo_gallery = models.ImageField(upload_to='images/gallery_gallery_images', verbose_name='Обычное изображение галереи')
@@ -62,6 +65,7 @@ class Gallery(models.Model):
         
 # 4
 class Reviews(models.Model):
+    
     # Reviews_yandex = models.CharField(max_length=50)
     # Reviews_google = models.CharField(max_length=50)
     # Reviews_zoon = models.CharField(max_length=50)
@@ -186,18 +190,24 @@ class Orthodontics(models.Model):
 
 # 6
 class Implantology(models.Model):
-    Implantology_implantology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Implantology_image = models.ImageField(upload_to='images/implantology_images')
-    Implantology_title = models.CharField(max_length=50)
-    Implantology_about = models.CharField(max_length=1000)
+    
+    Implantology_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    Implantology_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название Имплантологической УСЛУГИ')
+    Implantology_webp = models.ImageField(blank=True, null=True, upload_to='images/Implantology_images/webp', verbose_name='WEBP-изображение страницы Имплантология')
+    Implantology_image = models.ImageField(upload_to='images/Implantology_images', verbose_name='Обычное изображение страницы Имплантология')
+
+    def __str__(self):
+        return str(self.Implantology_title)
 
     class Meta:
         verbose_name = "Имплантология"
         verbose_name_plural = "Имплантология"
+        ordering = ['Implantology_IntegerField']
         
         
 # 7
 class Functional_Dentistry(models.Model):
+    
     Functional_Dentistry_functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
     Functional_Dentistry_image = models.ImageField(upload_to='images/functional_dentistry_images')
     Functional_Dentistry_title = models.CharField(max_length=50)
@@ -210,6 +220,7 @@ class Functional_Dentistry(models.Model):
 
 # 8
 class Orthopedics(models.Model):
+    
     Orthopedics_orthopedics = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
     Orthopedics_image = models.ImageField(upload_to='images/orthopedics_images')
     Orthopedics_title = models.CharField(max_length=50)
@@ -222,6 +233,7 @@ class Orthopedics(models.Model):
         
 # 9
 class Periodontology(models.Model):
+    
     Periodontology_periodontology = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
     Periodontology_image = models.ImageField(upload_to='images/periodontology_images')
     Periodontology_title = models.CharField(max_length=50)
@@ -234,6 +246,7 @@ class Periodontology(models.Model):
         
 # 10
 class Therapy(models.Model):
+    
     Therapy_therapy = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
     Therapy_image = models.ImageField(upload_to='images/therapy_images')
     Therapy_title = models.CharField(max_length=50)
@@ -246,6 +259,7 @@ class Therapy(models.Model):
         
 # 11
 class Surgery(models.Model):
+    
     Surgery_surgery = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
     Surgery_image = models.ImageField(upload_to='images/surgery_images')
     Surgery_title = models.CharField(max_length=50)
@@ -258,6 +272,7 @@ class Surgery(models.Model):
         
 # 12
 class Doctors(models.Model):
+    
     Doctors_name = models.CharField(max_length=30)
     Doctors_surname = models.CharField(max_length=50)
     Doctors_middle_name = models.CharField(max_length=50)
@@ -270,6 +285,7 @@ class Doctors(models.Model):
 
 
 class Instagram_Links(models.Model):
+    
     Instagram_Links_title = models.CharField(max_length=100)
     Instagram_Links_images = models.ImageField(upload_to='images/instagram_links_images')
     Instagram_Links_link = models.URLField(max_length = 200)
@@ -279,6 +295,7 @@ class Instagram_Links(models.Model):
         verbose_name_plural = "Наш инстаграм"
 
 class Feedback(models.Model):
+    
     Feedback_name = models.CharField(max_length=50)
     #Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
     Feedback_phone = models.CharField(max_length=18, unique=True)
@@ -289,6 +306,7 @@ class Feedback(models.Model):
         ordering = ['id']
 
 class Make_An_Appointment(models.Model):
+    
     Make_An_Appointment_name = models.CharField(max_length=50)
     Make_An_Appointment_phone = PhoneNumberField(null=False, blank=False, unique=True)
     Make_An_Appointment_mail = models.EmailField(max_length = 254)

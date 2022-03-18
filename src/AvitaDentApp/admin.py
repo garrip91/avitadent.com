@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics
+from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics, Implantology
 
 from django.utils.safestring import mark_safe
 
@@ -83,9 +83,23 @@ class OrthodonticsAdmin(admin.ModelAdmin):
     readonly_fields = ('get_image',)
     
     
+class ImplantologyAdmin(admin.ModelAdmin):
+    
+    class Meta:
+        model = Implantology
+
+    def get_image(self, obj):
+        return mark_safe(F'<img src={obj.Implantology_image.url} width="100" height="100">')
+    get_image.short_description = 'Изображение'    
+    
+    list_display = ('Implantology_title', 'Implantology_webp', 'Implantology_image', 'get_image', 'Implantology_IntegerField')
+    readonly_fields = ('get_image',)
+    
+    
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Reviews, ReviewsAdmin)
 admin.site.register(Orthodontics, OrthodonticsAdmin)
+admin.site.register(Implantology, ImplantologyAdmin)
