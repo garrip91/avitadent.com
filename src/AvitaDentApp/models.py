@@ -206,16 +206,17 @@ class Implantology(models.Model):
         
         
 # 7
-class Functional_Dentistry(models.Model):
+class FunctionalDentistry(models.Model):
     
-    Functional_Dentistry_functional_dentistry = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Functional_Dentistry_image = models.ImageField(upload_to='images/functional_dentistry_images')
-    Functional_Dentistry_title = models.CharField(max_length=50)
-    Functional_Dentistry_about = models.CharField(max_length=1000)
+    FunctionalDentistry_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    FunctionalDentistry_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Функциональной стоматологии')
+    FunctionalDentistry_webp = models.ImageField(blank=True, null=True, upload_to='images/Functional_Dentistry_images/webp', verbose_name='WEBP-изображение страницы Функциональная стоматология')
+    FunctionalDentistry_image = models.ImageField(upload_to='images/Functional_Dentistry_images', verbose_name='Обычное изображение страницы Функциональная стоматология')
 
     class Meta:
         verbose_name = "Функциональная стоматология"
         verbose_name_plural = "Функциональная стоматология"
+        ordering = ['FunctionalDentistry_IntegerField']
 
 
 # 8
