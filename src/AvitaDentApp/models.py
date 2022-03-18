@@ -69,87 +69,87 @@ class Reviews(models.Model):
 
 
 # 4.1
-class Reviews_Yandex(models.Model):
-    Reviews_Yandex_yandex = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    Reviews_Yandex_full_name = models.CharField(max_length=50)
-    Reviews_Yandex_review = models.CharField(max_length=1000)
-    Reviews_Yandex_date = models.DateField()
-    Reviews_Yandex_source = models.URLField(max_length = 200)
-    Reviews_Yandex_stars = models.IntegerField(default=0)
+# class Reviews_Yandex(models.Model):
+    # Reviews_Yandex_yandex = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    # Reviews_Yandex_full_name = models.CharField(max_length=50)
+    # Reviews_Yandex_review = models.CharField(max_length=1000)
+    # Reviews_Yandex_date = models.DateField()
+    # Reviews_Yandex_source = models.URLField(max_length = 200)
+    # Reviews_Yandex_stars = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Отзывы Яндекс"
-        verbose_name_plural = "Отзывы Яндекс"
+    # class Meta:
+        # verbose_name = "Отзывы Яндекс"
+        # verbose_name_plural = "Отзывы Яндекс"
 
 
 # 4.2
-class Reviews_Google(models.Model):
-    Reviews_Google_google = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    Reviews_Google_full_name = models.CharField(max_length=50)
-    Reviews_Google_review = models.CharField(max_length=1000)
-    Reviews_Google_date = models.DateField()
-    Reviews_Google_source = models.URLField(max_length = 200)
-    Reviews_Google_stars = models.IntegerField(default=0)
+# class Reviews_Google(models.Model):
+    # Reviews_Google_google = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    # Reviews_Google_full_name = models.CharField(max_length=50)
+    # Reviews_Google_review = models.CharField(max_length=1000)
+    # Reviews_Google_date = models.DateField()
+    # Reviews_Google_source = models.URLField(max_length = 200)
+    # Reviews_Google_stars = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Отзывы Гугл"
-        verbose_name_plural = "Отзывы Гугл"
+    # class Meta:
+        # verbose_name = "Отзывы Гугл"
+        # verbose_name_plural = "Отзывы Гугл"
 
 
 # 4.3
-class Reviews_Zoon(models.Model):
-    Reviews_Zoon_zoon = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    Reviews_Zoon_full_name = models.CharField(max_length=50)
-    Reviews_Zoon_review = models.CharField(max_length=1000)
-    Reviews_Zoon_date = models.DateField()
-    Reviews_Zoon_source = models.URLField(max_length = 200)
-    Reviews_Zoon_stars = models.IntegerField(default=0)
+# class Reviews_Zoon(models.Model):
+    # Reviews_Zoon_zoon = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    # Reviews_Zoon_full_name = models.CharField(max_length=50)
+    # Reviews_Zoon_review = models.CharField(max_length=1000)
+    # Reviews_Zoon_date = models.DateField()
+    # Reviews_Zoon_source = models.URLField(max_length = 200)
+    # Reviews_Zoon_stars = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Отзывы Зун"
-        verbose_name_plural = "Отзывы Зун"
+    # class Meta:
+        # verbose_name = "Отзывы Зун"
+        # verbose_name_plural = "Отзывы Зун"
 
 
 # 4.4
-class Reviews_Spr(models.Model):
-    Reviews_Spr_spr = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    Reviews_Spr_full_name = models.CharField(max_length=50)
-    Reviews_Spr_review = models.CharField(max_length=1000)
-    Reviews_Spr_date = models.DateField()
-    Reviews_Spr_source = models.URLField(max_length = 200)
-    Reviews_Spr_stars = models.IntegerField(default=0)
+# class Reviews_Spr(models.Model):
+    # Reviews_Spr_spr = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    # Reviews_Spr_full_name = models.CharField(max_length=50)
+    # Reviews_Spr_review = models.CharField(max_length=1000)
+    # Reviews_Spr_date = models.DateField()
+    # Reviews_Spr_source = models.URLField(max_length = 200)
+    # Reviews_Spr_stars = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Отзывы СПР"
-        verbose_name_plural = "Отзывы СПР"
+    # class Meta:
+        # verbose_name = "Отзывы СПР"
+        # verbose_name_plural = "Отзывы СПР"
 
 
 # 4.5
-class Reviews_Prodoctorov(models.Model):
-    Reviews_Prodoctorov_prodoctorov = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    Reviews_Prodoctorov_full_name = models.CharField(max_length=50)
-    Reviews_Prodoctorov_review = models.CharField(max_length=1000)
-    Reviews_Prodoctorov_date = models.DateField()
-    Reviews_Prodoctorov_source = models.URLField(max_length = 200)
-    Reviews_Prodoctorov_stars = models.IntegerField(default=0)
+# class Reviews_Prodoctorov(models.Model):
+    # Reviews_Prodoctorov_prodoctorov = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    # Reviews_Prodoctorov_full_name = models.CharField(max_length=50)
+    # Reviews_Prodoctorov_review = models.CharField(max_length=1000)
+    # Reviews_Prodoctorov_date = models.DateField()
+    # Reviews_Prodoctorov_source = models.URLField(max_length = 200)
+    # Reviews_Prodoctorov_stars = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Отзывы Продокторов"
-        verbose_name_plural = "Отзывы Продокторов"
+    # class Meta:
+        # verbose_name = "Отзывы Продокторов"
+        # verbose_name_plural = "Отзывы Продокторов"
 
 
 # 4.6
-class Reviews_Yell(models.Model):
-    Reviews_Yell_yell = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
-    Reviews_Yell_full_name = models.CharField(max_length=50)
-    Reviews_Yell_review = models.CharField(max_length=1000)
-    Reviews_Yell_date = models.DateField()
-    Reviews_Yell_source = models.URLField(max_length = 200)
-    Reviews_Yell_stars = models.IntegerField(default=0)
+# class Reviews_Yell(models.Model):
+    # Reviews_Yell_yell = models.OneToOneField(Reviews, on_delete = models.CASCADE, primary_key = True)
+    # Reviews_Yell_full_name = models.CharField(max_length=50)
+    # Reviews_Yell_review = models.CharField(max_length=1000)
+    # Reviews_Yell_date = models.DateField()
+    # Reviews_Yell_source = models.URLField(max_length = 200)
+    # Reviews_Yell_stars = models.IntegerField(default=0)
 
-    class Meta:
-        verbose_name = "Отзывы Йелл"
-        verbose_name_plural = "Отзывы Йелл"
+    # class Meta:
+        # verbose_name = "Отзывы Йелл"
+        # verbose_name_plural = "Отзывы Йелл"
         
         
 # 5
