@@ -102,10 +102,10 @@ class FunctionalDentistryAdmin(admin.ModelAdmin):
         model = FunctionalDentistry
 
     def get_image(self, obj):
-        return mark_safe(F'<img src={obj.Implantology_image.url} width="100" height="100">')
+        return mark_safe(F'<img src={obj.FunctionalDentistry_image.url} width="100" height="100">')
     get_image.short_description = 'Изображение'    
     
-    list_display = ('Implantology_title', 'Implantology_webp', 'Implantology_image', 'get_image', 'Implantology_IntegerField')
+    list_display = ('FunctionalDentistry_title', 'FunctionalDentistry_webp', 'FunctionalDentistry_image', 'get_image', 'FunctionalDentistry_IntegerField')
     readonly_fields = ('get_image',)
     
     
@@ -116,3 +116,4 @@ admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Reviews, ReviewsAdmin)
 admin.site.register(Orthodontics, OrthodonticsAdmin)
 admin.site.register(Implantology, ImplantologyAdmin)
+admin.site.register(FunctionalDentistry, FunctionalDentistryAdmin)
