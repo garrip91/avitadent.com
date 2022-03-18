@@ -168,20 +168,20 @@ class Reviews(models.Model):
         
 # 5
 class Orthodontics(models.Model):
-    Orthodontics_Services = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Связь с моделью УСЛУГИ')
-    Orthodontics_title = models.CharField(max_length=50, verbose_name='Название Ортодонтической УСЛУГИ')
-    Orthodontics_about = models.CharField(max_length=1000, verbose_name='Об Ортодонтии')
-    Orthodontics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthodontics_webp/webp', verbose_name='WEBP-изображение страницы Ортодонтия')
+
+    Orthodontics_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    Orthodontics_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название Ортодонтической УСЛУГИ')
+    Orthodontics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthodontics_images/webp', verbose_name='WEBP-изображение страницы Ортодонтия')
     Orthodontics_image = models.ImageField(upload_to='images/Orthodontics_images', verbose_name='Обычное изображение страницы Ортодонтия')
-    Orthodontics_datetime = models.DateTimeField('Дата и время создания записи', default=timezone.now)
+    #Orthodontics_datetime = models.DateTimeField('Дата и время создания записи', default=timezone.now)
 
     def __str__(self):
-        return self.Orthodontics_title
+        return str(self.Orthodontics_title)
 
     class Meta:
         verbose_name = "Ортодонтия"
         verbose_name_plural = "Ортодонтия"
-        ordering = ['Orthodontics_datetime']
+        ordering = ['Orthodontics_IntegerField']
 
 
 # 6

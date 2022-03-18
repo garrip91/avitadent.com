@@ -79,7 +79,7 @@ class OrthodonticsAdmin(admin.ModelAdmin):
         return mark_safe(F'<img src={obj.Orthodontics_image.url} width="100" height="100">')
     get_image.short_description = 'Изображение'    
     
-    list_display = ('Orthodontics_Services', 'Orthodontics_title', 'Orthodontics_about', 'Orthodontics_webp', 'Orthodontics_image', 'Orthodontics_datetime')
+    list_display = ('Orthodontics_title', 'Orthodontics_webp', 'Orthodontics_image', 'get_image', 'Orthodontics_IntegerField')
     readonly_fields = ('get_image',)
     
     
