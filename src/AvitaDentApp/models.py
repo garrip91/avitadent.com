@@ -162,6 +162,7 @@ class Orthodontics(models.Model):
     class Meta:
         verbose_name = "Ортодонтия"
         verbose_name_plural = "Ортодонтия"
+        ordering = ['id']
 
 
 # 6
