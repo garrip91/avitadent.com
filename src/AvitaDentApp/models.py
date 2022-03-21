@@ -259,14 +259,18 @@ class Periodontology(models.Model):
 # 10
 class Therapy(models.Model):
     
-    Therapy_therapy = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Therapy_image = models.ImageField(upload_to='images/therapy_images')
-    Therapy_title = models.CharField(max_length=50)
-    Therapy_about = models.CharField(max_length=1000)
+    Therapy_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    Therapy_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Терапия')
+    Therapy_webp = models.ImageField(blank=True, null=True, upload_to='images/Therapy_images/webp', verbose_name='WEBP-изображение страницы Терапия')
+    Therapy_image = models.ImageField(upload_to='images/Therapy_images', verbose_name='Обычное изображение страницы Терапия')
+
+    def __str__(self):
+        return str(self.Therapy_title)
 
     class Meta:
         verbose_name = "Терапия"
         verbose_name_plural = "Терапия"
+        ordering = ['Therapy_IntegerField']
         
         
 # 11
