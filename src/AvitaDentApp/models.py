@@ -276,14 +276,18 @@ class Therapy(models.Model):
 # 11
 class Surgery(models.Model):
     
-    Surgery_surgery = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True)
-    Surgery_image = models.ImageField(upload_to='images/surgery_images')
-    Surgery_title = models.CharField(max_length=50)
-    Surgery_about = models.CharField(max_length=1000)
+    Surgery_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
+    Surgery_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Хирургия')
+    Surgery_webp = models.ImageField(blank=True, null=True, upload_to='images/Surgery_images/webp', verbose_name='WEBP-изображение страницы Хирургия')
+    Surgery_image = models.ImageField(upload_to='images/Surgery_images', verbose_name='Обычное изображение страницы Хирургия')
+
+    def __str__(self):
+        return str(self.Surgery_title)
 
     class Meta:
         verbose_name = "Хирургия"
         verbose_name_plural = "Хирургия"
+        ordering = ['Surgery_IntegerField']
         
         
 # 12
