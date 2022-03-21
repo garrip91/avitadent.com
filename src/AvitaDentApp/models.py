@@ -293,15 +293,18 @@ class Surgery(models.Model):
 # 12
 class Doctors(models.Model):
     
-    Doctors_name = models.CharField(max_length=30)
-    Doctors_surname = models.CharField(max_length=50)
-    Doctors_middle_name = models.CharField(max_length=50)
-    Doctors_photo = models.ImageField(upload_to='images/doctors_images')
-    Doctors_about = models.CharField(max_length=1000)
+    Doctors_webp = models.ImageField(blank=True, null=True, upload_to='images/Doctors_images/webp', verbose_name='WEBP-изображение доктора')
+    Doctors_image = models.ImageField(blank=True, null=True, upload_to='images/Doctors_images', verbose_name='Обычное изображение доктора')
+    Doctors_name = models.CharField(max_length=100, verbose_name='Ф.И.О. доктора')
+    Doctors_about = models.CharField(max_length=1000, verbose_name='О докторе')
+
+    def __str__(self):
+        return str(self.Doctors_name)
 
     class Meta:
         verbose_name = "Доктора"
         verbose_name_plural = "Доктора"
+        ordering = ['id']
 
 
 class Instagram_Links(models.Model):
