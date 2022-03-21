@@ -82,7 +82,7 @@ class ServicesPageView(MyFormMixin, SuccessMessageMixin, View):
     form_class = FeedbackForm
     def get(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
-        services = Services.objects.all()
+        services = Services.objects.all()[:25]
         print(F'request.path == {self.request.path}')
         return render(
             request,

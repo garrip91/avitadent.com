@@ -321,7 +321,8 @@ class Feedback(models.Model):
     
     Feedback_name = models.CharField(max_length=50)
     #Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
-    Feedback_phone = models.CharField(max_length=18, unique=True)
+    #Feedback_phone = models.CharField(max_length=18, unique=True)
+    Feedback_phone = models.CharField(max_length=18)
 
     class Meta:
         verbose_name = "Обратная связь"
