@@ -65,6 +65,22 @@ class Certificates(models.Model):
         ordering = ['id']
 
 
+class Licenses(models.Model):
+
+    Licenses_title = models.CharField(max_length=100, verbose_name='Название изображения Лицензии')
+    Licenses_a_href = models.ImageField(blank=True, null=True, upload_to='images/Licenses_images/url', verbose_name='Обычное изображение Лицензии ДЛЯ ССЫЛКИ')
+    Licenses_webp = models.ImageField(upload_to='images/Licenses_images/webp', verbose_name='WEBP-изображение Лицензии')
+    Licenses_image = models.ImageField(upload_to='images/Licenses_images', verbose_name='Обычное изображение Лицензии')
+
+    def __str__(self):
+        return self.Licenses_title
+
+    class Meta:
+        verbose_name = "Лицензии"
+        verbose_name_plural = "Лицензии"
+        ordering = ['id']
+
+
 # 1
 class Services(models.Model):
     
