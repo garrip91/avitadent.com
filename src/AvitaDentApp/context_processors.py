@@ -22,7 +22,7 @@ def get_doctors_data(request):
     # return {'instagram_links': instagram_links}
 
 
-# def get_certificates_data(request):
+def get_certificates_data(request):
 
-    # certificates = Certificates.objects.all()
-    # return {'certificates': certificates}
+    certificates = Certificates.objects.all()
+    return {'certificates': certificates}

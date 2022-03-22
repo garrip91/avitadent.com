@@ -67,8 +67,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 
-                'AvitaDentApp.context_processors.get_doctors_data'
+                'AvitaDentApp.context_processors.get_doctors_data',
                 #'AvitaDentApp.context_processors.get_feedback_data',
+                'AvitaDentApp.context_processors.get_certificates_data',
             ],
         },
     },
