@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors, Certificates, Licenses
+from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors, Certificates, Licenses, Appointment
 
 from django.utils.safestring import mark_safe
 
@@ -200,6 +200,14 @@ class LicensesAdmin(admin.ModelAdmin):
     readonly_fields = ('get_image',)
 
 
+class AppointmentAdmin(admin.ModelAdmin):
+    
+    class Meta:
+        model = Appointment
+
+    list_display = ('Appointment_name', 'Appointment_phone', 'Appointment_mail', 'id')
+
+
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
@@ -215,3 +223,4 @@ admin.site.register(Surgery, SurgeryAdmin)
 admin.site.register(Doctors, DoctorsAdmin)
 admin.site.register(Certificates, CertificatesAdmin)
 admin.site.register(Licenses, LicensesAdmin)
+admin.site.register(Appointment, AppointmentAdmin)

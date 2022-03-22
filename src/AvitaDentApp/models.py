@@ -27,10 +27,13 @@ class Doctors(models.Model):
 
 class Feedback(models.Model):
     
-    Feedback_name = models.CharField(max_length=50)
+    Feedback_name = models.CharField(max_length=50, verbose_name='Ф.И.О. отправителя')
     #Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
     #Feedback_phone = models.CharField(max_length=18, unique=True)
-    Feedback_phone = models.CharField(max_length=18)
+    Feedback_phone = models.CharField(max_length=18, verbose_name='Телефон отправителя')
+
+    def __str__(self):
+        return F'{self.Feedback_name} - {self.Feedback_phone}'
 
     class Meta:
         verbose_name = "Обратная связь"
@@ -368,9 +371,12 @@ class Appointment(models.Model):
     # Make_An_Appointment_name = models.CharField(max_length=50)
     # Make_An_Appointment_phone = PhoneNumberField(null=False, blank=False, unique=True)
     # Make_An_Appointment_mail = models.EmailField(max_length = 254)
-    Appointment_name = models.CharField(max_length=50)
-    Appointment_phone = models.CharField(max_length=18)
-    Appointment_mail = models.EmailField(max_length=254)
+    Appointment_name = models.CharField(max_length=50, verbose_name='Ф.И.О. отправителя')
+    Appointment_phone = models.CharField(max_length=18, verbose_name='Телефон отправителя')
+    Appointment_mail = models.EmailField(max_length=254, verbose_name='Почта отправителя')
+
+    def __str__(self):
+        return F'{self.Appointment_name} - {self.Appointment_phone} - {self.Appointment_mail}'
 
     class Meta:
         verbose_name = "Запись на приём"
