@@ -52,6 +52,7 @@ class Instagram_Links(models.Model):
 class Certificates(models.Model):
 
     Certificates_title = models.CharField(max_length=100, verbose_name='Название изображения Сертификата')
+    Certificates_a_href = models.ImageField(blank=True, null=True, upload_to='images/Certificates_images/url', verbose_name='Обычное изображение Сертификата ДЛЯ ССЫЛКИ')
     Certificates_webp = models.ImageField(upload_to='images/Certificates_images/webp', verbose_name='WEBP-изображение Сертификата')
     Certificates_image = models.ImageField(upload_to='images/Certificates_images', verbose_name='Обычное изображение Сертификата')
 

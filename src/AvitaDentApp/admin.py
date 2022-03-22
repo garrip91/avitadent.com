@@ -183,7 +183,7 @@ class CertificatesAdmin(admin.ModelAdmin):
         return mark_safe(F'<img src={obj.Certificates_image.url} width="100" height="100">')
     get_image.short_description = 'Изображение'    
     
-    list_display = ('Certificates_title', 'Certificates_webp', 'Certificates_image', 'get_image', 'id')
+    list_display = ('Certificates_title', 'Certificates_a_href', 'Certificates_webp', 'Certificates_image', 'get_image', 'id')
     readonly_fields = ('get_image',)
 
 
