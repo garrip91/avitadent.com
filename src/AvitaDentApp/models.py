@@ -50,7 +50,7 @@ class Actions(models.Model):
 # 3
 class Gallery(models.Model):
     
-    Gallery_title = models.CharField(max_length=100)
+    Gallery_title = models.CharField(max_length=100, verbose_name='Название изображения галереи')
     Gallery_webp = models.ImageField(blank=True, null=True, upload_to='images/gallery_gallery_images/webp', verbose_name='WEBP-изображение галереи')
     Gallery_photo_gallery = models.ImageField(upload_to='images/gallery_gallery_images', verbose_name='Обычное изображение галереи')
 
@@ -338,3 +338,17 @@ class Make_An_Appointment(models.Model):
     class Meta:
         verbose_name = "Запись на приём"
         verbose_name_plural = "Запись на приём"
+        
+class Certificates(models.Model):
+
+    Certificates_title = models.CharField(max_length=100, verbose_name='Название изображения Сертификата')
+    Certificates_webp = models.ImageField(upload_to='images/Certificates_images/webp', verbose_name='WEBP-изображение Сертификата')
+    Certificates_image = models.ImageField(upload_to='images/Certificates_images', verbose_name='Обычное изображение Сертификата')
+
+    def __str__(self):
+        return self.Certificates_title
+
+    class Meta:
+        verbose_name = "Сертификаты"
+        verbose_name_plural = "Сертификаты"
+        ordering = ['id']

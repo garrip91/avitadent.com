@@ -37,3 +37,7 @@
     4.1. home.html
     4.2. gallery.html
     4.3. clinic-page.html
+
+5. PDF-КИ:
+    5.1. home.html
+    5.2. certificates-and-licenses.html

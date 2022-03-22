@@ -280,12 +280,21 @@ class SurgeryPageView(MyFormMixin, SuccessMessageMixin, View):
         )
 
 
-class CertificatesAndLicensesPageView(View):
+class CertificatesAndLicensesPageView(MyFormMixin, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        #surgery = Surgery.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/certificates-and-licenses.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/certificates-and-licenses.html',
+            {
+                #'surgery': surgery,
+                'form': form
+            }
+        )
 
 
 class PrivacyPolicyPageView(View):
