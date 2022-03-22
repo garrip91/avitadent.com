@@ -363,12 +363,16 @@ class Surgery(models.Model):
         ordering = ['Surgery_IntegerField']
 
 
-class Make_An_Appointment(models.Model):
+class Appointment(models.Model):
     
-    Make_An_Appointment_name = models.CharField(max_length=50)
-    Make_An_Appointment_phone = PhoneNumberField(null=False, blank=False, unique=True)
-    Make_An_Appointment_mail = models.EmailField(max_length = 254)
+    # Make_An_Appointment_name = models.CharField(max_length=50)
+    # Make_An_Appointment_phone = PhoneNumberField(null=False, blank=False, unique=True)
+    # Make_An_Appointment_mail = models.EmailField(max_length = 254)
+    Appointment_name = models.CharField(max_length=50)
+    Appointment_phone = models.CharField(max_length=18)
+    Appointment_mail = models.EmailField(max_length=254)
 
     class Meta:
         verbose_name = "Запись на приём"
         verbose_name_plural = "Запись на приём"
+        ordering = ['id']

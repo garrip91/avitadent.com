@@ -150,10 +150,23 @@ class ReviewsPageView(MyFormMixin, SuccessMessageMixin, View):
 
 class ContactsPageView(View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/contacts.html', context={})
+    form_class = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        #reviews = Reviews.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/contacts.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/contacts.html',
+            {
+                #'reviews': reviews,
+                'form': form
+            }
+        )
 
 
 class OrthodonticsPageView(MyFormMixin, SuccessMessageMixin, View):
@@ -286,7 +299,6 @@ class CertificatesAndLicensesPageView(MyFormMixin, SuccessMessageMixin, View):
             request,
             'AvitaDentApp/certificates-and-licenses.html',
             {
-                #'surgery': surgery,
                 'form': form
             }
         )
