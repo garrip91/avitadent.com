@@ -123,12 +123,25 @@ class GalleryPageView(MyFormMixin1, SuccessMessageMixin, View):
         )
 
 
-class ClinicPageView(View):
+class ClinicPageView(MyFormMixin1, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/clinic-page.html', context={})
+    form_class1 = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form1 = self.form_class1(request.POST)
+        #gallery = Gallery.objects.all()
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/clinic-page.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/clinic-page.html',
+            {
+                #'gallery': gallery,
+                'form1': form1
+            }
+        )
 
 
 class ReviewsPageView(MyFormMixin1, SuccessMessageMixin, View):
@@ -307,9 +320,20 @@ class CertificatesAndLicensesPageView(MyFormMixin1, SuccessMessageMixin, View):
         )
 
 
-class PrivacyPolicyPageView(View):
+class PrivacyPolicyPageView(MyFormMixin1, SuccessMessageMixin, View):
 
-    def get(self, request):
-        #user_form = UserForm()
+    # def get(self, request):
+        # #user_form = UserForm()
+        # print(F'request.path == {self.request.path}')
+        # return render(request, 'AvitaDentApp/privacy-policy.html', context={})
+    form_class1 = FeedbackForm
+    def get(self, request, *args, **kwargs):
+        form1 = self.form_class1(request.POST)
         print(F'request.path == {self.request.path}')
-        return render(request, 'AvitaDentApp/privacy-policy.html', context={})
+        return render(
+            request,
+            'AvitaDentApp/privacy-policy.html',
+            {
+                'form1': form1
+            }
+        )

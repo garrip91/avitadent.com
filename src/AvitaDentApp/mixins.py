@@ -22,11 +22,13 @@ class MyFormMixin1(View):
                 print(Feedback_phone)
                 print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                 messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                return HttpResponseRedirect(self.request.path)
+                #return HttpResponseRedirect(self.request.path)
+                return HttpResponseRedirect(F'{self.request.path}#thanks')
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
                 messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
-                return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+                #return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+                return HttpResponseRedirect(self.request.path)
         else:
             self.feedback_form = FeedbackForm()
         #####################################################################################
@@ -51,11 +53,13 @@ class MyFormMixin2(View):
                 print(Appointment_email)
                 print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
                 messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                return HttpResponseRedirect(self.request.path)
+                #return HttpResponseRedirect(self.request.path)
+                return HttpResponseRedirect(F'{self.request.path}#thanks')
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
                 messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
-                return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+                #return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+                return HttpResponseRedirect(self.request.path)
         else:
             self.appointment_form = AppointmentForm()
         #####################################################################################
