@@ -205,7 +205,7 @@ class AppointmentAdmin(admin.ModelAdmin):
     class Meta:
         model = Appointment
 
-    list_display = ('Appointment_name', 'Appointment_phone', 'Appointment_mail', 'id')
+    list_display = ('Appointment_name', 'Appointment_phone', 'Appointment_email', 'id')
 
 
 admin.site.register(Services, ServicesAdmin)

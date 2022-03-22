@@ -373,7 +373,7 @@ class Appointment(models.Model):
     # Make_An_Appointment_mail = models.EmailField(max_length = 254)
     Appointment_name = models.CharField(max_length=50, verbose_name='Ф.И.О. отправителя')
     Appointment_phone = models.CharField(max_length=18, verbose_name='Телефон отправителя')
-    Appointment_mail = models.EmailField(max_length=254, verbose_name='Почта отправителя')
+    Appointment_email = models.EmailField(max_length=254, verbose_name='Почта отправителя')
 
     def __str__(self):
         return F'{self.Appointment_name} - {self.Appointment_phone} - {self.Appointment_mail}'

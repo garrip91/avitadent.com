@@ -30,7 +30,7 @@ class AppointmentForm(forms.ModelForm):
     
     class Meta:
         model = Appointment
-        fields = ['Appointment_name', 'Appointment_phone', 'Appointment_mail']
+        fields = ['Appointment_name', 'Appointment_phone', 'Appointment_email']
         Appointment_name = forms.CharField(required=True)
         Appointment_phone = forms.CharField(required=True)
         Appointment_email = forms.EmailField(required=True)
