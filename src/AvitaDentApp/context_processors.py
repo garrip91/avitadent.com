@@ -1,4 +1,4 @@
-from .models import Doctors, Instagram_Links, Certificates
+from .models import Doctors, Instagram_Links, Certificates, Licenses
 from .forms import FeedbackForm
 
 
@@ -26,3 +26,9 @@ def get_certificates_data(request):
 
     certificates = Certificates.objects.all()
     return {'certificates': certificates}
+
+
+def get_licenses_data(request):
+
+    licenses = Licenses.objects.all()
+    return {'licenses': licenses}

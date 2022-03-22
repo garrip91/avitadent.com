@@ -70,6 +70,7 @@ TEMPLATES = [
                 'AvitaDentApp.context_processors.get_doctors_data',
                 #'AvitaDentApp.context_processors.get_feedback_data',
                 'AvitaDentApp.context_processors.get_certificates_data',
+                'AvitaDentApp.context_processors.get_licenses_data',
             ],
         },
     },
