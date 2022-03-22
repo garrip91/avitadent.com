@@ -1,7 +1,7 @@
 from django import forms
 
 #from KinomonsterApp.models import Film, Series, FilmComments, SeriesComments, SendMessage
-from .models import Feedback
+from .models import Feedback, Appointment
 
 #from django.contrib.auth import get_user_model, authenticate
 #from django.contrib.auth.hashers import check_password
@@ -24,3 +24,13 @@ class FeedbackForm(forms.ModelForm):
         fields = ['Feedback_name', 'Feedback_phone']
         Feedback_name = forms.CharField(required=True)
         Feedback_phone = forms.CharField(required=True)
+
+
+class AppointmentForm(forms.ModelForm):
+    
+    class Meta:
+        model = Appointment
+        fields = ['Appointment_name', 'Appointment_phone', 'Appointment_mail']
+        Appointment_name = forms.CharField(required=True)
+        Appointment_phone = forms.CharField(required=True)
+        Appointment_email = forms.EmailField(required=True)
