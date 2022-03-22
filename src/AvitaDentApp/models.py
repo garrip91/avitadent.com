@@ -8,6 +8,62 @@ from django.utils import timezone
 # blank=True, null=True
 
 
+
+class Doctors(models.Model):
+    
+    Doctors_webp = models.ImageField(blank=True, null=True, upload_to='images/Doctors_images/webp', verbose_name='WEBP-изображение доктора')
+    Doctors_image = models.ImageField(blank=True, null=True, upload_to='images/Doctors_images', verbose_name='Обычное изображение доктора')
+    Doctors_name = models.CharField(max_length=100, verbose_name='Ф.И.О. доктора')
+    Doctors_about = models.CharField(max_length=1000, verbose_name='О докторе')
+
+    def __str__(self):
+        return str(self.Doctors_name)
+
+    class Meta:
+        verbose_name = "Доктора"
+        verbose_name_plural = "Доктора"
+        ordering = ['id']
+
+
+class Feedback(models.Model):
+    
+    Feedback_name = models.CharField(max_length=50)
+    #Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
+    #Feedback_phone = models.CharField(max_length=18, unique=True)
+    Feedback_phone = models.CharField(max_length=18)
+
+    class Meta:
+        verbose_name = "Обратная связь"
+        verbose_name_plural = "Обратная связь"
+        ordering = ['id']
+
+
+class Instagram_Links(models.Model):
+    
+    Instagram_Links_title = models.CharField(max_length=100)
+    Instagram_Links_images = models.ImageField(upload_to='images/instagram_links_images')
+    Instagram_Links_link = models.URLField(max_length = 200)
+
+    class Meta:
+        verbose_name = "Наш инстаграм"
+        verbose_name_plural = "Наш инстаграм"
+
+
+class Certificates(models.Model):
+
+    Certificates_title = models.CharField(max_length=100, verbose_name='Название изображения Сертификата')
+    Certificates_webp = models.ImageField(upload_to='images/Certificates_images/webp', verbose_name='WEBP-изображение Сертификата')
+    Certificates_image = models.ImageField(upload_to='images/Certificates_images', verbose_name='Обычное изображение Сертификата')
+
+    def __str__(self):
+        return self.Certificates_title
+
+    class Meta:
+        verbose_name = "Сертификаты"
+        verbose_name_plural = "Сертификаты"
+        ordering = ['id']
+
+
 # 1
 class Services(models.Model):
     
@@ -288,46 +344,7 @@ class Surgery(models.Model):
         verbose_name = "Хирургия"
         verbose_name_plural = "Хирургия"
         ordering = ['Surgery_IntegerField']
-        
-        
-# 12
-class Doctors(models.Model):
-    
-    Doctors_webp = models.ImageField(blank=True, null=True, upload_to='images/Doctors_images/webp', verbose_name='WEBP-изображение доктора')
-    Doctors_image = models.ImageField(blank=True, null=True, upload_to='images/Doctors_images', verbose_name='Обычное изображение доктора')
-    Doctors_name = models.CharField(max_length=100, verbose_name='Ф.И.О. доктора')
-    Doctors_about = models.CharField(max_length=1000, verbose_name='О докторе')
 
-    def __str__(self):
-        return str(self.Doctors_name)
-
-    class Meta:
-        verbose_name = "Доктора"
-        verbose_name_plural = "Доктора"
-        ordering = ['id']
-
-
-class Instagram_Links(models.Model):
-    
-    Instagram_Links_title = models.CharField(max_length=100)
-    Instagram_Links_images = models.ImageField(upload_to='images/instagram_links_images')
-    Instagram_Links_link = models.URLField(max_length = 200)
-
-    class Meta:
-        verbose_name = "Наш инстаграм"
-        verbose_name_plural = "Наш инстаграм"
-
-class Feedback(models.Model):
-    
-    Feedback_name = models.CharField(max_length=50)
-    #Feedback_phone = PhoneNumberField(null=False, blank=False, unique=True)
-    #Feedback_phone = models.CharField(max_length=18, unique=True)
-    Feedback_phone = models.CharField(max_length=18)
-
-    class Meta:
-        verbose_name = "Обратная связь"
-        verbose_name_plural = "Обратная связь"
-        ordering = ['id']
 
 class Make_An_Appointment(models.Model):
     
@@ -338,17 +355,3 @@ class Make_An_Appointment(models.Model):
     class Meta:
         verbose_name = "Запись на приём"
         verbose_name_plural = "Запись на приём"
-        
-class Certificates(models.Model):
-
-    Certificates_title = models.CharField(max_length=100, verbose_name='Название изображения Сертификата')
-    Certificates_webp = models.ImageField(upload_to='images/Certificates_images/webp', verbose_name='WEBP-изображение Сертификата')
-    Certificates_image = models.ImageField(upload_to='images/Certificates_images', verbose_name='Обычное изображение Сертификата')
-
-    def __str__(self):
-        return self.Certificates_title
-
-    class Meta:
-        verbose_name = "Сертификаты"
-        verbose_name_plural = "Сертификаты"
-        ordering = ['id']
