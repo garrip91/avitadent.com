@@ -2,13 +2,13 @@ from django.shortcuts import render
 
 from django.views import View
 from .models import Services, Actions, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors
-from .forms import FeedbackForm, AppointmentForm
+from .forms import FeedbackForm, AppointmentForm, FooterFeedbackForm
 
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from .mixins import MyFormMixin1, MyFormMixin2
+from .mixins import MyFormMixin1, MyFormMixin2, MyFormMixin3
 from django.contrib.messages.views import SuccessMessageMixin
 
 
@@ -50,7 +50,7 @@ class TestView(View):
         # return render(request, self.template_name, {'form': form})
 
 
-class HomePageView(MyFormMixin1, SuccessMessageMixin, View):
+class HomePageView(MyFormMixin1, MyFormMixin3, SuccessMessageMixin, View):
 
     # def get(self, request):
         # #user_form = UserForm()
@@ -58,8 +58,10 @@ class HomePageView(MyFormMixin1, SuccessMessageMixin, View):
         # return render(request, 'AvitaDentApp/home.html', context={})
     
     form_class1 = FeedbackForm
+    form_class3 = FooterFeedbackForm
     def get(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
+        form3 = self.form_class3(request.POST)
         services = Services.objects.all()
         print(F'request.path == {self.request.path}')
         return render(
@@ -67,7 +69,8 @@ class HomePageView(MyFormMixin1, SuccessMessageMixin, View):
             'AvitaDentApp/home.html',
             {
                 'services': services,
-                'form1': form1
+                'form1': form1,
+                'form3': form3
             }
         )
 

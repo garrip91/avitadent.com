@@ -1,6 +1,6 @@
 from django.views.generic import View
 from .models import *
-from .forms import FeedbackForm, AppointmentForm
+from .forms import FeedbackForm, AppointmentForm, FooterFeedbackForm
 #from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 #from django.contrib import auth
@@ -62,6 +62,35 @@ class MyFormMixin2(View):
                 return HttpResponseRedirect(self.request.path)
         else:
             self.appointment_form = AppointmentForm()
+        #####################################################################################
+        # print(F'request.path == {request.path}')
+        return super().dispatch(request, *args, **kwargs)
+
+
+class MyFormMixin3(View):
+
+    def dispatch(self, request, *args, **kwargs):
+        #################### РЕАЛИЗУЕМ ПОЛУЧЕНИЕ ЗАЯВКИ ОТ ПОЛЬЗОВАТЕЛЯ: ####################
+        if request.method == 'POST' and 'feedback3' in request.POST:
+            footer_feedback_form = FooterFeedbackForm(request.POST)
+            print(footer_feedback_form)
+            if footer_feedback_form.is_valid():
+                footer_feedback_form.save()
+                FooterFeedback_name = footer_feedback_form.cleaned_data.get('FooterFeedback_name')
+                print(FooterFeedback_name)
+                FooterFeedback_phone = footer_feedback_form.cleaned_data.get('FooterFeedback_phone')
+                print(FooterFeedback_phone)
+                print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                #return HttpResponseRedirect(self.request.path)
+                return HttpResponseRedirect(F'{self.request.path}#thanks')
+            else:
+                print("ЧТО-ТО ПОШЛО НЕ ТАК!")
+                messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
+                #return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+                return HttpResponseRedirect(self.request.path)
+        else:
+            self.footer_feedback_form = FooterFeedbackForm()
         #####################################################################################
         # print(F'request.path == {request.path}')
         return super().dispatch(request, *args, **kwargs)

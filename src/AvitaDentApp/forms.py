@@ -34,3 +34,12 @@ class AppointmentForm(forms.ModelForm):
         Appointment_name = forms.CharField(required=True)
         Appointment_phone = forms.CharField(required=True)
         Appointment_email = forms.EmailField(required=True)
+
+
+class FooterFeedbackForm(forms.ModelForm):
+    
+    class Meta:
+        model = Feedback
+        fields = ['Feedback_name', 'Feedback_phone']
+        FooterFeedback_name = forms.CharField(required=True)
+        FooterFeedback_phone = forms.CharField(required=True)
