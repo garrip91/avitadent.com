@@ -139,3 +139,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+EMAIL_BACKEND = Yandex_config.EMAIL_BACKEND
+EMAIL_HOST = Yandex_config.EMAIL_HOST
+EMAIL_PORT = Yandex_config.EMAIL_PORT
+EMAIL_HOST_USER = Yandex_config.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = Yandex_config.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = Yandex_config.EMAIL_USE_TLS
+EMAIL_USE_SSL = Yandex_config.EMAIL_USE_SSL
