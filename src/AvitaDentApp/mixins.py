@@ -1,10 +1,11 @@
 from django.views.generic import View
 from .models import *
 from .forms import FeedbackForm, AppointmentForm, FooterFeedbackForm
-#from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-#from django.contrib import auth
 from django.http import HttpResponseRedirect
+
+from django.core.mail import send_mail
+from django.http import HttpResponseNotFound
 
 
 class MyFormMixin1(View):
@@ -15,15 +16,22 @@ class MyFormMixin1(View):
             feedback_form = FeedbackForm(request.POST)
             print(feedback_form)
             if feedback_form.is_valid():
-                feedback_form.save()
                 Feedback_name = feedback_form.cleaned_data.get('Feedback_name')
                 print(Feedback_name)
                 Feedback_phone = feedback_form.cleaned_data.get('Feedback_phone')
                 print(Feedback_phone)
-                print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                #return HttpResponseRedirect(self.request.path)
-                return HttpResponseRedirect(F'{self.request.path}#thanks')
+                try:
+                    send_mail(F'Вам поступила заявка от ***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >>', F'***[[ {Feedback_name} ]]*** с абонентским номером << {Feedback_phone} >> отправил Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
+                    # send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
+                    print(send_mail)
+                except:
+                    return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
+                else:
+                    print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                    messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                    feedback_form.save()
+                    #return HttpResponseRedirect(self.request.path)
+                    return HttpResponseRedirect(F'{self.request.path}#thanks')
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
                 messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')

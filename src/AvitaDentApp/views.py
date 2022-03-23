@@ -11,17 +11,25 @@ from django.urls import reverse
 from .mixins import MyFormMixin1, MyFormMixin2, MyFormMixin3
 from django.contrib.messages.views import SuccessMessageMixin
 
+from django.core.mail import send_mail
+
 
 
 # Create your views here.
 ###### ДЛЯ ПРОВЕРКИ: ######
 class TestView(View):
-
-    def get(self, request):
-        #user_form = UserForm()
+    def post(self, request, *args, **kwargs):
+        send_mail(F'Вам поступила заявка от ***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >>', F'***[[ ТЕСТ ]]*** с абонентским номером << +7 (999) 999-99-99 >> отправил Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
         print(F'request.path == {self.request.path}')
-        #return render(request, 'test.html', context={})
-        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER/test/'))
+        return render(
+            request,
+            'AvitaDentApp/home.html',
+            {
+                'services': services,
+                'form1': form1,
+                'form3': form3
+            }
+        )
 ###########################
 
 
