@@ -85,21 +85,25 @@ class MyFormMixin3(View):
         #################### РЕАЛИЗУЕМ ПОЛУЧЕНИЕ ЗАЯВКИ ОТ ПОЛЬЗОВАТЕЛЯ: ####################
         if request.method == 'POST' and 'feedback3' in request.POST:
             footer_feedback_form = FooterFeedbackForm(request.POST)
-            print(footer_feedback_form)
             if footer_feedback_form.is_valid():
-                footer_feedback_form.save()
-                FooterFeedback_name = footer_feedback_form.cleaned_data.get('FooterFeedback_name')
+                FooterFeedback_name = footer_feedback_form.cleaned_data.get('Feedback_name')
                 print(FooterFeedback_name)
-                FooterFeedback_phone = footer_feedback_form.cleaned_data.get('FooterFeedback_phone')
+                FooterFeedback_phone = footer_feedback_form.cleaned_data.get('Feedback_phone')
                 print(FooterFeedback_phone)
-                print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
-                #return HttpResponseRedirect(self.request.path)
-                return HttpResponseRedirect(F'{self.request.path}#thanks')
+                try:
+                    # send_mail(F'Вам поступила заявка от ***[[ {FooterFeedback_name} ]]*** с абонентским номером << {FooterFeedback_phone} >>', F'***[[ {FooterFeedback_name} ]]*** с абонентским номером << {FooterFeedback_phone} >> отправил Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['garrip91@mail.ru'], fail_silently=False)
+                    send_mail(F'Вам поступила заявка от ***[[ {FooterFeedback_name} ]]*** с абонентским номером << {FooterFeedback_phone} >>', F'***[[ {FooterFeedback_name} ]]*** с абонентским номером << {FooterFeedback_phone} >> отправил (-а) Вам заявку на консультацию!', 'avitadentedgar@yandex.ru', ['avitadentedgar@yandex.ru'], fail_silently=False)
+                    print(send_mail)
+                except:
+                    return HttpResponseNotFound('<h1>Письмо не отправлено</h1>')
+                else:
+                    print("ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                    messages.success(request, "ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА!")
+                    footer_feedback_form.save()
+                    return HttpResponseRedirect(F'{self.request.path}#thanks')
             else:
                 print("ЧТО-ТО ПОШЛО НЕ ТАК!")
                 messages.error(request, 'НЕПРАВИЛЬНО ВВЕДЁН НОМЕР ТЕЛЕФОНА!')
-                #return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
                 return HttpResponseRedirect(self.request.path)
         else:
             self.footer_feedback_form = FooterFeedbackForm()
