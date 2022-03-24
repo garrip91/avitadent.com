@@ -45,7 +45,7 @@ class Instagram_Links(models.Model):
     
     Instagram_Links_title = models.CharField(max_length=100)
     Instagram_Links_images = models.ImageField(upload_to='images/instagram_links_images')
-    Instagram_Links_link = models.URLField(max_length = 200)
+    Instagram_Links_link = models.URLField(max_length=200)
 
     class Meta:
         verbose_name = "Наш инстаграм"
@@ -250,7 +250,7 @@ class Reviews(models.Model):
 class Orthodontics(models.Model):
 
     Orthodontics_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    Orthodontics_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название Ортодонтической УСЛУГИ')
+    Orthodontics_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название Ортодонтической УСЛУГИ')
     Orthodontics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthodontics_images/webp', verbose_name='WEBP-изображение страницы Ортодонтия')
     Orthodontics_image = models.ImageField(upload_to='images/Orthodontics_images', verbose_name='Обычное изображение страницы Ортодонтия')
     #Orthodontics_datetime = models.DateTimeField('Дата и время создания записи', default=timezone.now)
@@ -268,7 +268,7 @@ class Orthodontics(models.Model):
 class Implantology(models.Model):
     
     Implantology_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    Implantology_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название Имплантологической УСЛУГИ')
+    Implantology_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название Имплантологической УСЛУГИ')
     Implantology_webp = models.ImageField(blank=True, null=True, upload_to='images/Implantology_images/webp', verbose_name='WEBP-изображение страницы Имплантология')
     Implantology_image = models.ImageField(upload_to='images/Implantology_images', verbose_name='Обычное изображение страницы Имплантология')
 
@@ -285,7 +285,7 @@ class Implantology(models.Model):
 class FunctionalDentistry(models.Model):
     
     FunctionalDentistry_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    FunctionalDentistry_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Функциональной стоматологии')
+    FunctionalDentistry_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название УСЛУГИ Функциональной стоматологии')
     FunctionalDentistry_webp = models.ImageField(blank=True, null=True, upload_to='images/Functional_Dentistry_images/webp', verbose_name='WEBP-изображение страницы Функциональная стоматология')
     FunctionalDentistry_image = models.ImageField(upload_to='images/Functional_Dentistry_images', verbose_name='Обычное изображение страницы Функциональная стоматология')
 
@@ -302,7 +302,7 @@ class FunctionalDentistry(models.Model):
 class Orthopedics(models.Model):
     
     Orthopedics_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    Orthopedics_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Ортопедия')
+    Orthopedics_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название УСЛУГИ Ортопедия')
     Orthopedics_webp = models.ImageField(blank=True, null=True, upload_to='images/Orthopedics_images/webp', verbose_name='WEBP-изображение страницы Ортопедия')
     Orthopedics_image = models.ImageField(upload_to='images/Orthopedics_images', verbose_name='Обычное изображение страницы Ортопедия')
 
@@ -319,7 +319,7 @@ class Orthopedics(models.Model):
 class Periodontology(models.Model):
     
     Periodontology_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    Periodontology_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Парадонтология')
+    Periodontology_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название УСЛУГИ Парадонтология')
     Periodontology_webp = models.ImageField(blank=True, null=True, upload_to='images/Periodontology_images/webp', verbose_name='WEBP-изображение страницы Парадонтология')
     Periodontology_image = models.ImageField(upload_to='images/Periodontology_images', verbose_name='Обычное изображение страницы Парадонтология')
 
@@ -336,7 +336,7 @@ class Periodontology(models.Model):
 class Therapy(models.Model):
     
     Therapy_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    Therapy_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Терапия')
+    Therapy_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название УСЛУГИ Терапия')
     Therapy_webp = models.ImageField(blank=True, null=True, upload_to='images/Therapy_images/webp', verbose_name='WEBP-изображение страницы Терапия')
     Therapy_image = models.ImageField(upload_to='images/Therapy_images', verbose_name='Обычное изображение страницы Терапия')
 
@@ -353,7 +353,7 @@ class Therapy(models.Model):
 class Surgery(models.Model):
     
     Surgery_IntegerField = models.IntegerField(blank=True, null=True, verbose_name='Порядковый номер для ручного внесения')
-    Surgery_title = models.OneToOneField(Services, on_delete = models.CASCADE, primary_key = True, verbose_name='Название УСЛУГИ Хирургия')
+    Surgery_title = models.OneToOneField(Services, on_delete=models.CASCADE, primary_key=True, verbose_name='Название УСЛУГИ Хирургия')
     Surgery_webp = models.ImageField(blank=True, null=True, upload_to='images/Surgery_images/webp', verbose_name='WEBP-изображение страницы Хирургия')
     Surgery_image = models.ImageField(upload_to='images/Surgery_images', verbose_name='Обычное изображение страницы Хирургия')
 
