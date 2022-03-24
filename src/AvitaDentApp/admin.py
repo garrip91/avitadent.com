@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors, Certificates, Licenses, Appointment
+from .models import Services, Actions, Feedback, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors, Certificates, Licenses, Appointment, Instagram_Links
 
 from django.utils.safestring import mark_safe
 
@@ -208,6 +208,19 @@ class AppointmentAdmin(admin.ModelAdmin):
     list_display = ('Appointment_name', 'Appointment_phone', 'Appointment_email', 'id')
 
 
+class InstagramLinksAdmin(admin.ModelAdmin):
+    
+    class Meta:
+        model = Instagram_Links
+
+    def get_image(self, obj):
+        return mark_safe(F'<img src={obj.Instagram_Links_image.url} width="100" height="100">')
+    get_image.short_description = 'Изображение'    
+    
+    list_display = ('Instagram_Links_title', 'Instagram_Links_webp', 'Instagram_Links_image', 'get_image', 'id')
+    readonly_fields = ('get_image',)
+
+
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
@@ -224,3 +237,4 @@ admin.site.register(Doctors, DoctorsAdmin)
 admin.site.register(Certificates, CertificatesAdmin)
 admin.site.register(Licenses, LicensesAdmin)
 admin.site.register(Appointment, AppointmentAdmin)
+admin.site.register(Instagram_Links, InstagramLinksAdmin)

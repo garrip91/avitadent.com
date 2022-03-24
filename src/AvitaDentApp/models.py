@@ -42,14 +42,19 @@ class Feedback(models.Model):
 
 
 class Instagram_Links(models.Model):
-    
-    Instagram_Links_title = models.CharField(max_length=100)
-    Instagram_Links_images = models.ImageField(upload_to='images/instagram_links_images')
-    Instagram_Links_link = models.URLField(max_length=200)
+
+    Instagram_Links_title = models.CharField(max_length=200, verbose_name='Название Instagram-блока')
+    Instagram_Links_webp = models.ImageField(blank=True, null=True, upload_to='images/instagram_links_images/webp', verbose_name='WEBP-изображение Instagram-блока')
+    Instagram_Links_image = models.ImageField(upload_to='images/instagram_links_images', verbose_name='Обычное изображение Instagram-блока')
+    Instagram_Links_link = models.URLField(max_length=1000, verbose_name='Ссылка на страницу в Instagram')
+
+    def __str__(self):
+        return self.Instagram_Links_title
 
     class Meta:
-        verbose_name = "Наш инстаграм"
-        verbose_name_plural = "Наш инстаграм"
+        verbose_name = "Наш Instagram"
+        verbose_name_plural = "Наш Instagram"
+        ordering = ['id']
 
 
 class Certificates(models.Model):
