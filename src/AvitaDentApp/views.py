@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Services, Actions, Gallery, Reviews, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors
+from .models import Services, Gallery, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery
 from .forms import FeedbackForm, AppointmentForm, FooterFeedbackForm
 
 from django.shortcuts import redirect
@@ -110,13 +110,11 @@ class ActionsPageView(MyFormMixin1, MyFormMixin3, SuccessMessageMixin, View):
     def get(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
         form3 = self.form_class3(request.POST)
-        #actions = Actions.objects.all()
         print(F'request.path == {self.request.path}')
         return render(
             request,
             'AvitaDentApp/actions.html',
             {
-                #'actions': actions,
                 'form1': form1,
                 'form3': form3
             }
@@ -168,13 +166,11 @@ class ReviewsPageView(MyFormMixin1, MyFormMixin3, SuccessMessageMixin, View):
     def get(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
         form3 = self.form_class3(request.POST)
-        #reviews = Reviews.objects.all()
         print(F'request.path == {self.request.path}')
         return render(
             request,
             'AvitaDentApp/reviews.html',
             {
-                #'reviews': reviews,
                 'form1': form1,
                 'form3': form3
             }
@@ -195,7 +191,6 @@ class ContactsPageView(MyFormMixin1, MyFormMixin2, MyFormMixin3, SuccessMessageM
             request,
             'AvitaDentApp/contacts.html',
             {
-                #'reviews': reviews,
                 'form1': form1,
                 'form2': form2,
                 'form3': form3
