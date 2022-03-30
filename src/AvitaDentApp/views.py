@@ -110,13 +110,13 @@ class ActionsPageView(MyFormMixin1, MyFormMixin3, SuccessMessageMixin, View):
     def get(self, request, *args, **kwargs):
         form1 = self.form_class1(request.POST)
         form3 = self.form_class3(request.POST)
-        actions = Actions.objects.all()
+        #actions = Actions.objects.all()
         print(F'request.path == {self.request.path}')
         return render(
             request,
             'AvitaDentApp/actions.html',
             {
-                'actions': actions,
+                #'actions': actions,
                 'form1': form1,
                 'form3': form3
             }

@@ -1,4 +1,4 @@
-from .models import Doctors, Instagram_Links, Certificates, Licenses, Instagram_Links
+from .models import Doctors, Instagram_Links, Certificates, Licenses, Instagram_Links, Actions
 from .forms import FeedbackForm
 
 
@@ -38,3 +38,9 @@ def get_instagram_links_data(request):
 
     links = Instagram_Links.objects.all()
     return {'links': links}
+
+
+def get_actions_data(request):
+
+    actions = Actions.objects.all()
+    return {'actions': actions}
