@@ -33,31 +33,6 @@ class TestView(View):
 ###########################
 
 
-# class FeedbackFormView(View):
-
-    # form_class = FeedbackForm
-    # initial = {'key': 'value'}
-    # template_name = 'feedback_form_template.html'
-    # ###### ВРЕМЕННО: ######
-    # def get(self, request, *args, **kwargs):
-        # form = self.form_class(request.GET)
-        # ###### ВРЕМЕННО: ######
-        # print(F'request.path == {self.request.path}')
-        # #######################
-        # return render(request, self.template_name, {'form': form})
-    # #######################
-    # def post(self, request, *args, **kwargs):
-        # form = self.form_class(request.POST)
-        # print(form)
-        # ###### ВРЕМЕННО: ######
-        # print(F'request.path == {self.request.path}')
-        # #######################
-        # if form.is_valid():
-            # pass
-            # #return HttpResponseRedirect('/success/')
-        # return render(request, self.template_name, {'form': form})
-
-
 class HomePageView(MyFormMixin1, MyFormMixin3, SuccessMessageMixin, View):
 
     # def get(self, request):
