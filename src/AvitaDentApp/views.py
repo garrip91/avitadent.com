@@ -13,6 +13,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from django.core.mail import send_mail
 
+from rest_framework import generics
+from . import serializers
+from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -347,3 +351,15 @@ class PrivacyPolicyPageView(MyFormMixin1, MyFormMixin3, SuccessMessageMixin, Vie
                 'form3': form3
             }
         )
+
+
+class UserList(generics.ListAPIView):
+
+    queryset = User.objects.all()
+    serializer_class = serializers.UserSerializer
+
+
+class UserDetail(generics.RetrieveAPIView):
+
+    queryset = User.objects.all()
+    serializer_class = serializers.UserSerializer

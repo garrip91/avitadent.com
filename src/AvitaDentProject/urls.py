@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView, TestView
+from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView, TestView, UserList, UserDetail
 #, FeedbackFormView
 
 from django.conf.urls.static import static
 from django.conf import settings
+
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('test/', TestView.as_view(), name='test_view'), # Страница теста
@@ -41,8 +43,14 @@ urlpatterns = [
     path('surgery/', SurgeryPageView.as_view(), name='surgery'), # Хирургия
     path('certificates-and-licenses/', CertificatesAndLicensesPageView.as_view(), name='certificates-and-licenses'), # Сертификаты и лицензии
     path('privacy-policy/', PrivacyPolicyPageView.as_view(), name='privacy-policy'), # Политика конфиденциальности
+
+    path('DRF/users/', UserList.as_view()),
+    path('DRF/users/<int:pk>/', UserDetail.as_view()),
+
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
     # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns = format_suffix_patterns(urlpatterns)

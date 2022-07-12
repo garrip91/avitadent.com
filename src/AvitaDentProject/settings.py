@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'AvitaDentApp',
+
     'phonenumber_field',
     'widget_tweaks',
+    'rest_framework',
+
+    'AvitaDentApp',
 ]
 
 MIDDLEWARE = [
