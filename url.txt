@@ -1,1 +1,2 @@
-https://pythonru-com.turbopages.org/pythonru.com/s/uroki/django-rest-api
+1. https://pythonru-com.turbopages.org/pythonru.com/s/uroki/django-rest-api
+2. https://ilyachch.gitbook.io/django-rest-framework-russian-documentation/overview/readme
