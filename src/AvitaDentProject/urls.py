@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView, TestView, UserList, UserDetail
+from AvitaDentApp.views import HomePageView, ServicesPageView, ActionsPageView, GalleryPageView, ClinicPageView, ReviewsPageView, ContactsPageView, OrthodonticsPageView, ImplantologyPageView, FunctionalDentistryPageView, OrthopedicsPageView, PeriodontologyPageView, TherapyPageView, SurgeryPageView, CertificatesAndLicensesPageView, PrivacyPolicyPageView, TestView, UserList, UserDetail, DoctorsList, DoctorsDetail
 #, FeedbackFormView
 
 from django.conf.urls.static import static
@@ -44,8 +44,11 @@ urlpatterns = [
     path('certificates-and-licenses/', CertificatesAndLicensesPageView.as_view(), name='certificates-and-licenses'), # Сертификаты и лицензии
     path('privacy-policy/', PrivacyPolicyPageView.as_view(), name='privacy-policy'), # Политика конфиденциальности
 
+    path('DRF/api-auth/', include('rest_framework.urls')),
     path('DRF/users/', UserList.as_view()),
     path('DRF/users/<int:pk>/', UserDetail.as_view()),
+    path('DRF/doctors/', DoctorsList.as_view()),
+    path('DRF/doctors/<int:pk>/', DoctorsDetail.as_view()),
 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

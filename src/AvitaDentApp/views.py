@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.views import View
-from .models import Services, Gallery, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery
+from .models import Services, Gallery, Orthodontics, Implantology, FunctionalDentistry, Orthopedics, Periodontology, Therapy, Surgery, Doctors
 from .forms import FeedbackForm, AppointmentForm, FooterFeedbackForm
 
 from django.shortcuts import redirect
@@ -13,9 +13,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from django.core.mail import send_mail
 
-from rest_framework import generics
+from rest_framework import generics#, permissions
 from . import serializers
 from django.contrib.auth.models import User
+#from .permissions import IsOwnerOrReadOnly
 
 
 
@@ -363,3 +364,20 @@ class UserDetail(generics.RetrieveAPIView):
 
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer
+
+
+class DoctorsList(generics.ListCreateAPIView):
+
+    queryset = Doctors.objects.all()
+    serializer_class = serializers.DoctorsSerializer
+    #permission_classes = [permissions.IsOwnerOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
+class DoctorsDetail(generics.RetrieveUpdateDestroyAPIView):
+
+    queryset = Doctors.objects.all()
+    serializer_class = serializers.DoctorsSerializer
+    #permission_classes = [permissions.IsOwnerOrReadOnly]
