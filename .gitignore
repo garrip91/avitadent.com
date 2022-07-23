@@ -1,4 +1,5 @@
 __pycache__/
 *.pyc
+SECRET_KEY.py
 Yandex_config.py
 db.sqlite3
